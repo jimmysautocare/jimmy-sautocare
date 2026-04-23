@@ -215,7 +215,7 @@
             width: 350px;
             height: 280px;
             object-fit: contain;
-            margin-bottom: 20px;
+            margin-bottom: -15px;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -3591,6 +3591,23 @@
     </footer>
 
     <script>
+        // --- PDF Logo Preloading ---
+        let pdfLogoBase64 = null;
+        (function preloadLogo() {
+            const logoUrl = "https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png";
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.onload = function() {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+                pdfLogoBase64 = canvas.toDataURL("image/png");
+            };
+            img.src = logoUrl;
+        })();
+
         // --- Ultra Interactivity Suite ---
         (function () {
             const cursor = document.getElementById('cursor');
@@ -3924,7 +3941,7 @@
             let healthScore = 100;
 
             if (toolUsed === 'Oil Change') {
-                const driven = parseInt(data.currentMiles) - parseInt(data.lastMiles);
+                const driven = (parseInt(data.currentMiles) || 0) - (parseInt(data.lastMiles) || 0);
                 insights.push(`Miles driven since last change: ${driven || 0}`);
                 insights.push(`Oil Type: ${data.oilType ? data.oilType.replace('-', ' ') : 'Not Specified'}`);
 
@@ -3994,10 +4011,19 @@
                     healthScore = 90;
                     recommendation = "GOOD: Battery appears to be in healthy condition.";
                 }
+            } else {
+                insights.push("General inspection requested.");
+                recommendation = "Please visit us for a complete diagnostic.";
             }
 
             const docDefinition = {
                 content: [
+                    pdfLogoBase64 ? {
+                        image: pdfLogoBase64,
+                        width: 120,
+                        alignment: 'center',
+                        margin: [0, 0, 0, 15]
+                    } : null,
                     {
                         text: "Jimmy's Auto Care",
                         style: 'header',
@@ -4011,16 +4037,18 @@
                         margin: [0, 0, 0, 30]
                     },
                     {
+                        canvas: [{ type: 'line', x1: 0, y1: 5, x2: 515, y2: 5, lineWidth: 1, lineColor: '#eeeeee' }]
+                    },
+                    {
                         text: `Vehicle Health Report: ${toolUsed}`,
                         style: 'title',
-                        margin: [0, 0, 0, 20]
+                        margin: [0, 20, 0, 20]
                     },
                     {
-                        text: `Prepared for: ${name || 'Valued Customer'}`,
-                        margin: [0, 0, 0, 5]
-                    },
-                    {
-                        text: `Vehicle: ${vehicle || 'Not Specified'}`,
+                        columns: [
+                            { text: `Prepared for: ${name || 'Valued Customer'}`, width: '*' },
+                            { text: `Vehicle: ${vehicle || 'Not Specified'}`, alignment: 'right' }
+                        ],
                         margin: [0, 0, 0, 20]
                     },
                     {
@@ -4029,7 +4057,7 @@
                     },
                     {
                         ul: insights,
-                        margin: [0, 0, 0, 20]
+                        margin: [0, 5, 0, 20]
                     },
                     {
                         text: `Estimated System Health Score: ${healthScore}/100`,
@@ -4043,18 +4071,24 @@
                     },
                     {
                         text: recommendation,
-                        margin: [0, 0, 0, 40]
+                        margin: [0, 5, 0, 40]
+                    },
+                    {
+                        canvas: [{ type: 'line', x1: 0, y1: 5, x2: 515, y2: 5, lineWidth: 1, lineColor: '#eeeeee' }]
                     },
                     {
                         text: 'Take Action Today',
                         style: 'sectionHeader',
-                        color: '#C0182A'
+                        color: '#C0182A',
+                        margin: [0, 20, 0, 5]
                     },
                     {
                         text: 'Show this report at your next visit for a complimentary multi-point inspection with any paid service. Call (312) 445-5760 to book your appointment now.',
-                        italics: true
+                        italics: true,
+                        fontSize: 10,
+                        color: '#444444'
                     }
-                ],
+                ].filter(Boolean),
                 styles: {
                     header: {
                         fontSize: 28,
@@ -4085,7 +4119,12 @@
                 }
             };
 
-            pdfMake.createPdf(docDefinition).download(`Jimmys_Auto_Care_Report_${toolUsed.replace(' ', '_')}.pdf`);
+            if (typeof pdfMake !== 'undefined') {
+                pdfMake.createPdf(docDefinition).download(`Jimmys_Auto_Care_Report_${toolUsed.replace(/\s+/g, '_')}.pdf`);
+            } else {
+                console.error("pdfMake is not loaded");
+                alert("PDF generation service is currently unavailable. Please call us directly.");
+            }
         }
 
         // Premium Appointment Booking Logic
@@ -4139,7 +4178,14 @@
                 // 1. Generate PDF
                 const docDefinition = {
                     content: [
+                        pdfLogoBase64 ? {
+                            image: pdfLogoBase64,
+                            width: 100,
+                            alignment: 'center',
+                            margin: [0, 0, 0, 10]
+                        } : null,
                         { text: "Jimmy's Auto Care", style: 'header', color: '#C9A84C', alignment: 'center' },
+                        { text: '6116 N. Elston Ave., Chicago, IL 60646 | (312) 445-5760', style: 'subheader', alignment: 'center', margin: [0, 0, 0, 20] },
                         { text: 'Appointment Confirmation', style: 'title', margin: [0, 10, 0, 20] },
                         {
                             columns: [
@@ -4149,12 +4195,14 @@
                         },
                         { text: '\nService Requested:', style: 'sectionHeader' },
                         { text: service, margin: [0, 5, 0, 20] },
-                    ],
+                    ].filter(Boolean),
                     styles: {
                         header: { fontSize: 24, bold: true },
-                        title: { fontSize: 20, bold: true, alignment: 'center' },
+                        subheader: { fontSize: 9, color: '#666666' },
+                        title: { fontSize: 18, bold: true, alignment: 'center' },
                         sectionHeader: { fontSize: 14, bold: true, color: '#C0182A' }
-                    }
+                    },
+                    defaultStyle: { font: 'Roboto' }
                 };
 
                 if (uploadedImageBase64) {
@@ -4162,17 +4210,18 @@
                     docDefinition.content.push({ image: uploadedImageBase64, width: 300, margin: [0, 10, 0, 0] });
                 }
 
-                // Explicitly set font to ensure compatibility
-                docDefinition.defaultStyle = { font: 'Roboto' };
-
                 try {
                     console.log('Generating PDF...');
-                    const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-                    pdfDocGenerator.download(`Jimmys_Booking_${name.replace(/\s+/g, '_')}.pdf`);
-                    console.log('PDF download triggered');
+                    if (typeof pdfMake !== 'undefined') {
+                        const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+                        pdfDocGenerator.download(`Jimmys_Booking_${name.replace(/\s+/g, '_')}.pdf`);
+                        console.log('PDF download triggered');
+                    } else {
+                        throw new Error("pdfMake not loaded");
+                    }
                 } catch (pdfError) {
                     console.error('PDF Generation Error:', pdfError);
-                    status.innerHTML = "Error generating PDF. Please try again.";
+                    status.innerHTML = "Error generating PDF. Please try again or call us.";
                     submitBtn.disabled = false;
                     return;
                 }
