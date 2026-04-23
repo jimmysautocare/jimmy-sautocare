@@ -227,6 +227,7 @@
                 opacity: 0;
                 transform: translateY(-20px) scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -2249,19 +2250,70 @@
             transform: translateY(0);
         }
 
+        /* ─── HAMBURGER MENU BUTTON ─── */
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            transition: all 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+            transform-origin: center;
+        }
+
+        .nav-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .nav-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ─── MOBILE MENU OVERLAY ─── */
+        .mobile-menu-overlay {
+            display: none;
+        }
+
+        /* ─── TOUCH DEVICE OVERRIDES ─── */
+        @media (hover: none) and (pointer: coarse) {
+            html, body, a, button, .health-tab, .social-icon, input, select, textarea {
+                cursor: auto !important;
+            }
+            .custom-cursor, .custom-cursor-follower {
+                display: none !important;
+            }
+        }
+
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
             nav {
                 padding: 18px 30px;
             }
 
-            .hero-content {
-                padding: 0 40px;
+            nav.scrolled {
+                padding: 14px 30px;
             }
 
-            .hero-stats {
-                right: 30px;
-                bottom: 40px;
+            .hero-content {
+                padding: 0 40px;
             }
 
             .about,
@@ -2288,91 +2340,741 @@
                 padding: 50px 40px 30px;
             }
 
-            .testimonial-glass {
-                padding: 50px 44px;
+            .owner-prestige {
+                padding: 100px 40px;
+                gap: 60px;
+            }
+
+            .owner-quote {
+                font-size: 32px;
+            }
+
+            .owner-portrait {
+                height: 550px;
+            }
+
+            .stats-section {
+                padding: 0 40px;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            /* ── Show hamburger, hide nav links ── */
+            .nav-hamburger {
+                display: flex;
             }
 
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                height: 100dvh;
+                background: rgba(250, 250, 247, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0;
+                z-index: 1001;
+                transform: translateX(100%);
+                transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+                padding: 0;
+            }
+
+            .nav-links.open {
+                transform: translateX(0);
+            }
+
+            .nav-links li {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            .nav-links.open li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .nav-links.open li:nth-child(1) { transition-delay: 0.15s; }
+            .nav-links.open li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-links.open li:nth-child(3) { transition-delay: 0.25s; }
+            .nav-links.open li:nth-child(4) { transition-delay: 0.3s; }
+            .nav-links.open li:nth-child(5) { transition-delay: 0.35s; }
+
+            .nav-links a {
+                font-size: 14px;
+                letter-spacing: 3px;
+                padding: 18px 0;
+                display: block;
+            }
+
+            .nav-cta {
+                margin-top: 10px;
+            }
+
+            /* ── Nav ── */
+            nav {
+                padding: 16px 20px;
+            }
+
+            nav.scrolled {
+                padding: 12px 20px;
+            }
+
+            .nav-logo span:first-child {
+                font-size: 20px;
+            }
+
+            .nav-logo span:last-child {
+                font-size: 8px;
+                letter-spacing: 3px;
+            }
+
+            /* ── Hero ── */
+            .hero-content {
+                padding: 0 24px;
+            }
+
+            .hero h1 {
+                font-size: clamp(36px, 10vw, 60px);
+            }
+
+            .hero-sub {
+                font-size: 18px;
+                margin-bottom: 24px;
+            }
+
+            .hero-desc {
+                font-size: 13px;
+                margin-bottom: 32px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .btn-primary {
+                padding: 14px 28px;
+                font-size: 10px;
+            }
+
+            /* ── Stats ── */
+            .stats-section {
+                padding: 0 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 24px 16px;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .stat-num {
+                font-size: 42px;
+            }
+
+            /* ── About ── */
             .about {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 40px;
+                padding: 60px 24px;
             }
 
             .about-images {
-                height: 340px;
+                height: 280px;
             }
 
-            .contact-section {
+            .about-text {
+                font-size: 17px;
+            }
+
+            .about-features {
                 grid-template-columns: 1fr;
-                padding: 0 24px 60px;
+                gap: 14px;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto;
+            /* ── Image Marquee ── */
+            .img-slide {
+                width: 200px;
+                height: 200px;
             }
 
-            .gallery-item:first-child {
-                grid-row: span 1;
-            }
-
-            .hero-stats {
-                position: relative;
-                bottom: auto;
-                right: auto;
-                padding: 0 40px;
-                margin-top: 40px;
-                gap: 2px;
-            }
-
-            .hero-content {
-                padding: 0 30px;
+            /* ── Services ── */
+            .services {
+                padding: 60px 20px;
             }
 
             .services-header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 16px;
                 align-items: flex-start;
+                margin-bottom: 40px;
+            }
+
+            .services-header p {
+                text-align: left !important;
+                max-width: 100% !important;
             }
 
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
 
-            .footer-top {
+            .service-card {
+                min-height: 240px;
+            }
+
+            .service-card.flipped .service-card-inner {
+                transform: scale(1.02) rotateY(180deg);
+            }
+
+            .service-card-front,
+            .service-card-back {
+                padding: 28px 20px 28px;
+            }
+
+            .service-card-front h3 {
+                font-size: 18px;
+            }
+
+            .service-card-front p {
+                font-size: 11px;
+            }
+
+            .service-card-back h3 {
+                font-size: 20px;
+            }
+
+            .service-card-back ul li {
+                font-size: 11px;
+            }
+
+            /* ── Owner Prestige ── */
+            .owner-prestige {
                 flex-direction: column;
+                padding: 60px 24px;
                 gap: 40px;
             }
 
-            .testimonial {
-                padding: 60px 24px;
+            .owner-portrait {
+                max-width: 100%;
+                height: 400px;
             }
 
-            .testimonial-glass {
-                padding: 36px 28px;
+            .owner-quote {
+                font-size: 26px;
+                margin-bottom: 24px;
             }
 
+            .owner-quote::before {
+                left: -10px;
+                top: -15px;
+                font-size: 80px;
+            }
+
+            .owner-name {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            .owner-title {
+                font-size: 12px;
+                margin-bottom: 24px;
+            }
+
+            .owner-story {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .owner-signature {
+                font-size: 36px;
+            }
+
+            .prestige-accent {
+                font-size: 120px;
+                right: -20px;
+                bottom: -20px;
+            }
+
+            /* ── Gallery ── */
+            .gallery {
+                padding: 60px 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 180px 180px 180px;
+                gap: 8px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: span 1;
+                grid-column: span 2;
+            }
+
+            /* ── Health Tools ── */
             .health-tools {
-                padding: 60px 30px;
+                padding: 60px 20px;
+            }
+
+            .health-tabs {
+                gap: 6px;
+                padding: 6px;
+                border-radius: 16px;
+            }
+
+            .health-tab {
+                padding: 10px 14px;
+                font-size: 9px;
+                letter-spacing: 1px;
+                border-radius: 12px;
             }
 
             .health-tool-content {
-                padding: 30px 20px;
+                padding: 28px 18px;
             }
 
+            .tool-panel h3 {
+                font-size: 22px;
+            }
+
+            /* ── Testimonial ── */
+            .testimonial {
+                padding: 40px 0;
+            }
+
+            .review-card {
+                width: 300px;
+                padding: 28px 24px;
+                margin: 0 10px;
+            }
+
+            .testimonial blockquote {
+                font-size: 15px;
+            }
+
+            @keyframes reviewScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-320px * 7)); }
+            }
+
+            /* ── Contact Section ── */
+            .contact-section {
+                grid-template-columns: 1fr;
+                padding: 0 20px 60px;
+                gap: 24px;
+            }
+
+            .hours-card,
+            .contact-card {
+                padding: 40px 28px;
+            }
+
+            .hours-card .section-title,
+            .contact-card .section-title {
+                font-size: 26px !important;
+            }
+
+            .booking-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .booking-form-container.active {
+                padding: 18px;
+            }
+
+            /* ── Map ── */
+            .map-full {
+                height: 320px;
+            }
+
+            .map-pin-badge {
+                font-size: 9px;
+                padding: 8px 14px;
+                letter-spacing: 1px;
+                transform: translate(-50%, -60px);
+                max-width: 90vw;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .map-directions-btn {
+                bottom: 16px;
+                right: 16px;
+                padding: 10px 18px;
+                font-size: 10px;
+            }
+
+            /* ── CTA Band ── */
+            .cta-band {
+                padding: 60px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-actions .btn-primary,
+            .cta-actions .btn-outline {
+                text-align: center;
+                width: 100%;
+            }
+
+            /* ── Lead Popup ── */
             .lead-popup-content {
-                padding: 40px 24px;
+                padding: 36px 20px;
+                max-width: 95vw;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .lead-popup-content .input-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .popup-header h3 {
+                font-size: 22px;
+            }
+
+            /* ── Footer ── */
+            footer {
+                padding: 50px 20px 24px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .footer-brand .nav-logo span:first-child {
+                font-size: 26px;
+            }
+
+            .footer-social {
+                margin-top: 18px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+                font-size: 10px;
+            }
+
+            /* ── Preloader ── */
+            .pre-logo-img {
+                width: 220px;
+                height: 180px;
+            }
+
+            .pre-logo {
+                font-size: clamp(16px, 5vw, 28px);
+                letter-spacing: 4px;
+            }
+
+            /* ── Communication Hub ── */
+            .comm-hub {
+                bottom: 20px;
+                right: 16px;
+                gap: 10px;
+            }
+
+            .comm-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+
+            .comm-tooltip {
+                display: none;
+            }
+
+            /* ── Contact header inline style override ── */
+            #contact > div:first-child {
+                padding: 0 20px 40px !important;
             }
         }
 
         @media (max-width: 480px) {
+            /* ── Services 1-col ── */
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: 220px;
+            }
+
+            /* ── Hero ── */
+            .hero-content {
+                padding: 0 18px;
+            }
+
+            .hero h1 {
+                font-size: clamp(30px, 9vw, 44px);
+            }
+
+            .hero-badge {
+                font-size: 8px;
+                letter-spacing: 3px;
+            }
+
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            .hero-desc {
+                font-size: 12px;
+                line-height: 1.7;
+            }
+
+            /* ── About ── */
+            .about {
+                padding: 50px 16px;
+            }
+
+            .about-images {
+                height: 220px;
+            }
+
+            .about-img-main {
+                width: 80%;
+                height: 85%;
+            }
+
+            .about-img-accent {
+                width: 50%;
+                height: 50%;
+            }
+
+            .about-text {
+                font-size: 16px;
+            }
+
+            /* ── Section Titles ── */
+            .section-title {
+                font-size: clamp(26px, 6vw, 36px);
+            }
+
+            /* ── Gallery ── */
+            .gallery {
+                padding: 50px 16px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .gallery-item,
+            .gallery-item:first-child {
+                grid-column: span 1;
+                height: 200px;
+            }
+
+            .gallery-item img {
+                height: 200px;
+            }
+
+            /* ── Owner ── */
+            .owner-prestige {
+                padding: 50px 16px;
+            }
+
+            .owner-portrait {
+                height: 320px;
+            }
+
+            .owner-quote {
+                font-size: 22px;
+            }
+
+            .owner-signature {
+                font-size: 28px;
+            }
+
+            /* ── Health ── */
+            .health-tools {
+                padding: 50px 16px;
+            }
+
+            .health-tabs {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+
+            .health-tab {
+                width: 100%;
+                text-align: center;
+                padding: 12px 16px;
+                font-size: 10px;
+            }
+
+            .health-tool-content {
+                padding: 24px 14px;
+            }
+
+            /* ── Review cards ── */
+            .review-card {
+                width: 260px;
+                padding: 24px 18px;
+                margin: 0 8px;
+            }
+
+            .testimonial blockquote {
+                font-size: 14px;
+            }
+
+            @keyframes reviewScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-276px * 7)); }
+            }
+
+            /* ── Contact ── */
+            .hours-card,
+            .contact-card {
+                padding: 32px 20px;
+            }
+
+            .contact-detail a,
+            .contact-detail span {
+                font-size: 16px;
+            }
+
+            /* ── CTA ── */
+            .cta-band {
+                padding: 50px 16px;
+            }
+
+            .cta-band h2 {
+                font-size: clamp(24px, 6vw, 36px);
+            }
+
+            /* ── Footer ── */
+            footer {
+                padding: 40px 16px 20px;
+            }
+
+            .footer-links h4 {
+                font-size: 10px;
+                margin-bottom: 18px;
+            }
+
+            .footer-bottom {
+                padding-top: 24px;
+            }
+
+            /* ── Map ── */
+            .map-full {
+                height: 260px;
+            }
+
+            .map-pin-badge {
+                font-size: 8px;
+                padding: 6px 10px;
+            }
+
+            /* ── Image Marquee ── */
+            .img-slide {
+                width: 160px;
+                height: 160px;
+            }
+
+            /* ── Preloader ── */
+            .pre-logo-img {
+                width: 180px;
+                height: 150px;
+            }
+
+            .pre-content {
+                padding: 0 20px;
+            }
+
+            .pre-logo {
+                letter-spacing: 2px;
+            }
+
+            /* ── Popup ── */
+            .lead-popup-content {
+                padding: 28px 16px;
+            }
+
+            .popup-header h3 {
+                font-size: 20px;
+            }
+
+            .popup-header p {
+                font-size: 11px;
+            }
+        }
+
+        /* ── Ultra-small screens ── */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-badge {
+                font-size: 7px;
+            }
+
+            .hero-sub {
+                font-size: 15px;
+            }
+
+            .stat-num {
+                font-size: 36px;
+            }
+
+            .stat-label {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
+
+            .owner-quote {
+                font-size: 20px;
+            }
+
+            .owner-portrait {
+                height: 280px;
+            }
+
+            .nav-logo span:first-child {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: clamp(22px, 5.5vw, 32px);
+            }
+
+            .review-card {
+                width: 240px;
+            }
+
+            .pre-logo-img {
+                width: 150px;
+                height: 120px;
             }
         }
     </style>
@@ -2387,7 +3089,8 @@
     <!-- ══════════ PRELOADER ══════════ -->
     <div id="preloader">
         <div class="pre-content">
-            <img src="https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png" alt="Jimmy's Auto Care Logo" class="pre-logo-img">
+            <img src="https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png"
+                alt="Jimmy's Auto Care Logo" class="pre-logo-img">
             <div class="pre-logo">
                 Jimmy's <span class="red-text">Auto</span> Care
             </div>
@@ -2406,6 +3109,11 @@
             <span><em>Jimmy's</em> Auto Care</span>
             <span>Chicago's Premier Auto Service</span>
         </div>
+        <button class="nav-hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -3591,23 +4299,6 @@
     </footer>
 
     <script>
-        // --- PDF Logo Preloading ---
-        let pdfLogoBase64 = null;
-        (function preloadLogo() {
-            const logoUrl = "https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png";
-            const img = new Image();
-            img.crossOrigin = "Anonymous";
-            img.onload = function() {
-                const canvas = document.createElement("canvas");
-                canvas.width = img.width;
-                canvas.height = img.height;
-                const ctx = canvas.getContext("2d");
-                ctx.drawImage(img, 0, 0);
-                pdfLogoBase64 = canvas.toDataURL("image/png");
-            };
-            img.src = logoUrl;
-        })();
-
         // --- Ultra Interactivity Suite ---
         (function () {
             const cursor = document.getElementById('cursor');
@@ -3941,7 +4632,7 @@
             let healthScore = 100;
 
             if (toolUsed === 'Oil Change') {
-                const driven = (parseInt(data.currentMiles) || 0) - (parseInt(data.lastMiles) || 0);
+                const driven = parseInt(data.currentMiles) - parseInt(data.lastMiles);
                 insights.push(`Miles driven since last change: ${driven || 0}`);
                 insights.push(`Oil Type: ${data.oilType ? data.oilType.replace('-', ' ') : 'Not Specified'}`);
 
@@ -4011,19 +4702,28 @@
                     healthScore = 90;
                     recommendation = "GOOD: Battery appears to be in healthy condition.";
                 }
-            } else {
-                insights.push("General inspection requested.");
-                recommendation = "Please visit us for a complete diagnostic.";
             }
 
             const docDefinition = {
+                background: function (currentPage) {
+                    return {
+                        canvas: [
+                            {
+                                type: 'rect',
+                                x: 0, y: 0,
+                                w: 595, h: 842,
+                                color: '#FAFAF7'
+                            }
+                        ]
+                    };
+                },
                 content: [
-                    pdfLogoBase64 ? {
-                        image: pdfLogoBase64,
-                        width: 120,
+                    {
+                        image: 'https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png',
+                        width: 100,
                         alignment: 'center',
-                        margin: [0, 0, 0, 15]
-                    } : null,
+                        margin: [0, 0, 0, 5]
+                    },
                     {
                         text: "Jimmy's Auto Care",
                         style: 'header',
@@ -4031,87 +4731,176 @@
                         alignment: 'center'
                     },
                     {
+                        text: 'Chicago\'s Premier Automotive Excellence',
+                        style: 'tagline',
+                        alignment: 'center',
+                        margin: [0, -5, 0, 15]
+                    },
+                    {
                         text: '6116 N. Elston Ave., Chicago, IL 60646 | (312) 445-5760',
                         style: 'subheader',
+                        alignment: 'center',
+                        margin: [0, 0, 0, 20]
+                    },
+                    {
+                        canvas: [{ type: 'line', x1: 0, y1: 5, x2: 515, y2: 5, lineWidth: 1.5, lineColor: '#C9A84C' }],
+                        margin: [0, 0, 0, 30]
+                    },
+                    {
+                        text: `OFFICIAL VEHICLE HEALTH REPORT`,
+                        style: 'reportTitle',
+                        alignment: 'center',
+                        margin: [0, 0, 0, 10]
+                    },
+                    {
+                        text: toolUsed.toUpperCase(),
+                        style: 'toolTitle',
                         alignment: 'center',
                         margin: [0, 0, 0, 30]
                     },
                     {
-                        canvas: [{ type: 'line', x1: 0, y1: 5, x2: 515, y2: 5, lineWidth: 1, lineColor: '#eeeeee' }]
-                    },
-                    {
-                        text: `Vehicle Health Report: ${toolUsed}`,
-                        style: 'title',
-                        margin: [0, 20, 0, 20]
-                    },
-                    {
                         columns: [
-                            { text: `Prepared for: ${name || 'Valued Customer'}`, width: '*' },
-                            { text: `Vehicle: ${vehicle || 'Not Specified'}`, alignment: 'right' }
+                            {
+                                stack: [
+                                    { text: 'PREPARED FOR', style: 'label' },
+                                    { text: name || 'Valued Customer', style: 'value' }
+                                ]
+                            },
+                            {
+                                stack: [
+                                    { text: 'VEHICLE', style: 'label' },
+                                    { text: vehicle || 'Not Specified', style: 'value' }
+                                ],
+                                alignment: 'right'
+                            }
                         ],
-                        margin: [0, 0, 0, 20]
+                        margin: [0, 0, 0, 40]
                     },
                     {
-                        text: 'Health Insights',
+                        text: 'DIAGNOSTIC INSIGHTS',
                         style: 'sectionHeader'
+                    },
+                    {
+                        canvas: [{ type: 'line', x1: 0, y1: 2, x2: 150, y2: 2, lineWidth: 1, lineColor: '#C9A84C' }],
+                        margin: [0, 0, 0, 15]
                     },
                     {
                         ul: insights,
-                        margin: [0, 5, 0, 20]
+                        style: 'insightsList',
+                        margin: [10, 0, 0, 30]
                     },
                     {
-                        text: `Estimated System Health Score: ${healthScore}/100`,
-                        style: 'score',
-                        color: healthScore < 50 ? '#C0182A' : (healthScore < 80 ? '#D4B870' : '#228B22'),
-                        margin: [0, 0, 0, 20]
+                        table: {
+                            widths: ['*'],
+                            body: [
+                                [
+                                    {
+                                        stack: [
+                                            { text: 'VEHICLE HEALTH SCORE', style: 'scoreLabel', alignment: 'center' },
+                                            {
+                                                text: `${healthScore}/100`,
+                                                style: 'scoreValue',
+                                                alignment: 'center',
+                                                color: healthScore < 50 ? '#C0182A' : (healthScore < 80 ? '#D4B870' : '#228B22')
+                                            }
+                                        ],
+                                        fillColor: '#F5F0E8',
+                                        padding: [20, 20, 20, 20]
+                                    }
+                                ]
+                            ]
+                        },
+                        layout: 'noBorders',
+                        margin: [0, 0, 0, 40]
                     },
                     {
-                        text: 'Expert Recommendation',
+                        text: 'EXPERT RECOMMENDATION',
                         style: 'sectionHeader'
                     },
                     {
+                        canvas: [{ type: 'line', x1: 0, y1: 2, x2: 180, y2: 2, lineWidth: 1, lineColor: '#C9A84C' }],
+                        margin: [0, 0, 0, 15]
+                    },
+                    {
                         text: recommendation,
-                        margin: [0, 5, 0, 40]
+                        style: 'recommendationText',
+                        margin: [0, 0, 0, 40]
                     },
                     {
-                        canvas: [{ type: 'line', x1: 0, y1: 5, x2: 515, y2: 5, lineWidth: 1, lineColor: '#eeeeee' }]
-                    },
-                    {
-                        text: 'Take Action Today',
+                        text: 'JIMMY\'S GUARANTEE',
                         style: 'sectionHeader',
-                        color: '#C0182A',
-                        margin: [0, 20, 0, 5]
+                        color: '#C0182A'
                     },
                     {
-                        text: 'Show this report at your next visit for a complimentary multi-point inspection with any paid service. Call (312) 445-5760 to book your appointment now.',
-                        italics: true,
-                        fontSize: 10,
-                        color: '#444444'
+                        text: 'This report represents a premium diagnostic evaluation. Present this document at Jimmy\'s Auto Care for priority service and a complimentary multi-point inspection. Our master technicians are ready to ensure your vehicle performs at its absolute peak.',
+                        style: 'guaranteeText'
                     }
-                ].filter(Boolean),
+                ],
                 styles: {
                     header: {
-                        fontSize: 28,
-                        bold: true
+                        fontSize: 26,
+                        bold: true,
+                        font: 'Playfair Display'
+                    },
+                    tagline: {
+                        fontSize: 10,
+                        letterSpacing: 2,
+                        color: '#9A7B2F'
                     },
                     subheader: {
-                        fontSize: 10,
-                        color: '#666666'
+                        fontSize: 9,
+                        color: '#6B6B6B'
                     },
-                    title: {
-                        fontSize: 22,
+                    reportTitle: {
+                        fontSize: 12,
+                        letterSpacing: 4,
+                        color: '#1A1A1A',
+                        bold: true
+                    },
+                    toolTitle: {
+                        fontSize: 24,
+                        bold: true,
+                        color: '#C9A84C'
+                    },
+                    label: {
+                        fontSize: 8,
+                        color: '#6B6B6B',
+                        margin: [0, 0, 0, 2]
+                    },
+                    value: {
+                        fontSize: 12,
                         bold: true,
                         color: '#1A1A1A'
                     },
                     sectionHeader: {
-                        fontSize: 16,
+                        fontSize: 14,
                         bold: true,
                         color: '#1A1A1A',
-                        margin: [0, 15, 0, 5]
+                        letterSpacing: 1
                     },
-                    score: {
-                        fontSize: 18,
+                    insightsList: {
+                        fontSize: 11,
+                        lineHeight: 1.5
+                    },
+                    scoreLabel: {
+                        fontSize: 10,
+                        color: '#6B6B6B',
                         bold: true
+                    },
+                    scoreValue: {
+                        fontSize: 32,
+                        bold: true
+                    },
+                    recommendationText: {
+                        fontSize: 12,
+                        lineHeight: 1.6,
+                        italics: true,
+                        color: '#2D2D2D'
+                    },
+                    guaranteeText: {
+                        fontSize: 10,
+                        lineHeight: 1.6,
+                        color: '#6B6B6B'
                     }
                 },
                 defaultStyle: {
@@ -4119,12 +4908,7 @@
                 }
             };
 
-            if (typeof pdfMake !== 'undefined') {
-                pdfMake.createPdf(docDefinition).download(`Jimmys_Auto_Care_Report_${toolUsed.replace(/\s+/g, '_')}.pdf`);
-            } else {
-                console.error("pdfMake is not loaded");
-                alert("PDF generation service is currently unavailable. Please call us directly.");
-            }
+            pdfMake.createPdf(docDefinition).download(`Jimmys_Auto_Care_Report_${toolUsed.replace(' ', '_')}.pdf`);
         }
 
         // Premium Appointment Booking Logic
@@ -4177,32 +4961,113 @@
 
                 // 1. Generate PDF
                 const docDefinition = {
+                    background: function (currentPage) {
+                        return {
+                            canvas: [
+                                {
+                                    type: 'rect',
+                                    x: 0, y: 0,
+                                    w: 595, h: 842,
+                                    color: '#FAFAF7'
+                                }
+                            ]
+                        };
+                    },
                     content: [
-                        pdfLogoBase64 ? {
-                            image: pdfLogoBase64,
+                        {
+                            image: 'https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png',
                             width: 100,
                             alignment: 'center',
                             margin: [0, 0, 0, 10]
-                        } : null,
-                        { text: "Jimmy's Auto Care", style: 'header', color: '#C9A84C', alignment: 'center' },
-                        { text: '6116 N. Elston Ave., Chicago, IL 60646 | (312) 445-5760', style: 'subheader', alignment: 'center', margin: [0, 0, 0, 20] },
-                        { text: 'Appointment Confirmation', style: 'title', margin: [0, 10, 0, 20] },
-                        {
-                            columns: [
-                                { text: `Customer: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}`, width: '*' },
-                                { text: `Date: ${date}\nTime Slot: ${time.toUpperCase()}`, alignment: 'right' }
-                            ]
                         },
-                        { text: '\nService Requested:', style: 'sectionHeader' },
-                        { text: service, margin: [0, 5, 0, 20] },
-                    ].filter(Boolean),
+                        { text: "Jimmy's Auto Care", style: 'header', color: '#C9A84C', alignment: 'center' },
+                        {
+                            text: '6116 N. Elston Ave., Chicago, IL 60646 | (312) 445-5760',
+                            style: 'subheader',
+                            alignment: 'center',
+                            margin: [0, 0, 0, 20]
+                        },
+                        {
+                            canvas: [{ type: 'line', x1: 0, y1: 5, x2: 515, y2: 5, lineWidth: 1.5, lineColor: '#C9A84C' }],
+                            margin: [0, 0, 0, 30]
+                        },
+                        { text: 'APPOINTMENT CONFIRMATION', style: 'title', margin: [0, 0, 0, 30] },
+                        {
+                            table: {
+                                widths: ['*', '*'],
+                                body: [
+                                    [
+                                        {
+                                            stack: [
+                                                { text: 'CUSTOMER DETAILS', style: 'label' },
+                                                { text: name, style: 'value' },
+                                                { text: phone, style: 'valueSmall' }
+                                            ],
+                                            border: [false, false, false, false]
+                                        },
+                                        {
+                                            stack: [
+                                                { text: 'APPOINTMENT TIME', style: 'label' },
+                                                { text: date, style: 'value' },
+                                                { text: time.toUpperCase(), style: 'valueSmall', color: '#C0182A' }
+                                            ],
+                                            alignment: 'right',
+                                            border: [false, false, false, false]
+                                        }
+                                    ]
+                                ]
+                            },
+                            margin: [0, 0, 0, 30]
+                        },
+                        {
+                            stack: [
+                                { text: 'VEHICLE', style: 'label' },
+                                { text: vehicle, style: 'value' }
+                            ],
+                            margin: [0, 0, 0, 30]
+                        },
+                        {
+                            text: 'SERVICE REQUESTED',
+                            style: 'sectionHeader'
+                        },
+                        {
+                            canvas: [{ type: 'line', x1: 0, y1: 2, x2: 150, y2: 2, lineWidth: 1, lineColor: '#C9A84C' }],
+                            margin: [0, 0, 0, 10]
+                        },
+                        {
+                            text: service,
+                            style: 'serviceText',
+                            margin: [0, 0, 0, 40]
+                        },
+                        {
+                            table: {
+                                widths: ['*'],
+                                body: [
+                                    [
+                                        {
+                                            text: 'Your reservation is secured. Please arrive 5 minutes prior to your scheduled time. We look forward to providing your vehicle with exceptional care.',
+                                            style: 'footerNote',
+                                            alignment: 'center'
+                                        }
+                                    ]
+                                ]
+                            },
+                            layout: 'noBorders',
+                            fillColor: '#F5F0E8',
+                            margin: [0, 20, 0, 0]
+                        }
+                    ],
                     styles: {
                         header: { fontSize: 24, bold: true },
-                        subheader: { fontSize: 9, color: '#666666' },
-                        title: { fontSize: 18, bold: true, alignment: 'center' },
-                        sectionHeader: { fontSize: 14, bold: true, color: '#C0182A' }
-                    },
-                    defaultStyle: { font: 'Roboto' }
+                        subheader: { fontSize: 9, color: '#6B6B6B' },
+                        title: { fontSize: 18, bold: true, alignment: 'center', letterSpacing: 2, color: '#1A1A1A' },
+                        label: { fontSize: 8, color: '#6B6B6B', margin: [0, 0, 0, 4] },
+                        value: { fontSize: 13, bold: true, color: '#1A1A1A' },
+                        valueSmall: { fontSize: 11, bold: true },
+                        sectionHeader: { fontSize: 12, bold: true, color: '#C9A84C', letterSpacing: 1 },
+                        serviceText: { fontSize: 12, lineHeight: 1.5 },
+                        footerNote: { fontSize: 10, italics: true, color: '#6B6B6B', padding: [20, 20, 20, 20] }
+                    }
                 };
 
                 if (uploadedImageBase64) {
@@ -4210,18 +5075,17 @@
                     docDefinition.content.push({ image: uploadedImageBase64, width: 300, margin: [0, 10, 0, 0] });
                 }
 
+                // Explicitly set font to ensure compatibility
+                docDefinition.defaultStyle = { font: 'Roboto' };
+
                 try {
                     console.log('Generating PDF...');
-                    if (typeof pdfMake !== 'undefined') {
-                        const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-                        pdfDocGenerator.download(`Jimmys_Booking_${name.replace(/\s+/g, '_')}.pdf`);
-                        console.log('PDF download triggered');
-                    } else {
-                        throw new Error("pdfMake not loaded");
-                    }
+                    const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+                    pdfDocGenerator.download(`Jimmys_Booking_${name.replace(/\s+/g, '_')}.pdf`);
+                    console.log('PDF download triggered');
                 } catch (pdfError) {
                     console.error('PDF Generation Error:', pdfError);
-                    status.innerHTML = "Error generating PDF. Please try again or call us.";
+                    status.innerHTML = "Error generating PDF. Please try again.";
                     submitBtn.disabled = false;
                     return;
                 }
@@ -4260,6 +5124,27 @@
                     toggleBtn.innerHTML = '<span>✨ Book Luxurious Appointment</span> <i>📅</i>';
                 }, 5000);
             });
+        })();
+
+        // Mobile Menu Toggle
+        (function() {
+            const hamburger = document.querySelector('.nav-hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('open');
+                });
+
+                // Close menu when clicking a link
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('open');
+                    });
+                });
+            }
         })();
 
         // Hero Slideshow
