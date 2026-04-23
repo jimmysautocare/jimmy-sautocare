@@ -4331,6 +4331,7 @@
             // 3. Magnetic Buttons
             const magnets = document.querySelectorAll('.btn-primary, .btn-outline, .btn-booking, .nav-links a');
             magnets.forEach(btn => {
+                if (btn.closest('#contact')) return; // Disable magnetic effect in contact section
                 btn.addEventListener('mousemove', (e) => {
                     const rect = btn.getBoundingClientRect();
                     const x = e.clientX - rect.left - rect.width / 2;
@@ -4343,7 +4344,7 @@
             });
 
             // 4. 3D Card Tilt
-            const tiltCards = document.querySelectorAll('.service-card, .contact-card, .hours-card');
+            const tiltCards = document.querySelectorAll('.service-card');
             tiltCards.forEach(card => {
                 card.classList.add('tilt-card');
                 card.addEventListener('mousemove', (e) => {
@@ -4585,7 +4586,11 @@
             const vehicleStr = `${year} ${make} ${model}`;
 
             // Generate PDF Report using pdfmake
-            generatePDFReport(name, vehicleStr, toolUsed, JSON.parse(toolDataStr));
+            try {
+                generatePDFReport(name, vehicleStr, toolUsed, JSON.parse(toolDataStr));
+            } catch (pdfErr) {
+                console.error('PDF Generation Error:', pdfErr);
+            }
 
             // Send data to Google Sheets
             // NOTE: Replace 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL' with the actual URL from Apps Script
@@ -4632,7 +4637,9 @@
             let healthScore = 100;
 
             if (toolUsed === 'Oil Change') {
-                const driven = parseInt(data.currentMiles) - parseInt(data.lastMiles);
+                const currentMiles = parseInt(data.currentMiles) || 0;
+                const lastMiles = parseInt(data.lastMiles) || 0;
+                const driven = currentMiles - lastMiles;
                 insights.push(`Miles driven since last change: ${driven || 0}`);
                 insights.push(`Oil Type: ${data.oilType ? data.oilType.replace('-', ' ') : 'Not Specified'}`);
 
@@ -4651,10 +4658,11 @@
                 insights.push(`Estimated Pad Thickness: ${data.thickness}mm`);
                 insights.push(`Abnormal Noise: ${data.noise}`);
 
-                if (parseInt(data.thickness) <= 3 || data.noise === 'grinding') {
+                const thickness = parseInt(data.thickness) || 0;
+                if (thickness <= 3 || data.noise === 'grinding') {
                     healthScore = 20;
                     recommendation = "CRITICAL: Your brakes are unsafe. Grinding or low pad thickness means immediate replacement is required.";
-                } else if (parseInt(data.thickness) <= 5 || data.noise === 'squeaking') {
+                } else if (thickness <= 5 || data.noise === 'squeaking') {
                     healthScore = 50;
                     recommendation = "WARNING: Brake pads are wearing down and squeaking indicates they need inspection soon.";
                 } else {
@@ -4662,7 +4670,9 @@
                     recommendation = "GOOD: Brake thickness appears adequate.";
                 }
             } else if (toolUsed === 'Fuel Economy') {
-                const mpg = data.gallons ? (data.miles / data.gallons).toFixed(1) : 0;
+                const miles = parseFloat(data.miles) || 0;
+                const gallons = parseFloat(data.gallons) || 0;
+                const mpg = gallons ? (miles / gallons).toFixed(1) : 0;
                 insights.push(`Calculated MPG: ${mpg} miles per gallon`);
                 if (mpg < 15) {
                     healthScore = 40;
@@ -4678,10 +4688,11 @@
                 insights.push(`Tread Depth: ${data.tread}/32"`);
                 insights.push(`Wear Pattern: ${data.wear}`);
 
-                if (parseInt(data.tread) <= 3 || data.wear !== 'even') {
+                const tread = parseInt(data.tread) || 0;
+                if (tread <= 3 || data.wear !== 'even') {
                     healthScore = 30;
                     recommendation = "ACTION REQUIRED: Low tread or uneven wear indicates you need new tires or an alignment immediately.";
-                } else if (parseInt(data.tread) <= 5) {
+                } else if (tread <= 5) {
                     healthScore = 60;
                     recommendation = "WARNING: Tires are nearing the end of their life. Plan for replacement before winter/rain.";
                 } else {
@@ -4692,10 +4703,11 @@
                 insights.push(`Battery Age: ${data.age} Years`);
                 insights.push(`Starting Behavior: ${data.start}`);
 
-                if (parseFloat(data.age) >= 4 || data.start === 'click') {
+                const age = parseFloat(data.age) || 0;
+                if (age >= 4 || data.start === 'click') {
                     healthScore = 25;
                     recommendation = "CRITICAL: Batteries older than 4 years or clicking indicate imminent failure. Replace immediately.";
-                } else if (parseFloat(data.age) >= 3 || data.start === 'slow') {
+                } else if (age >= 3 || data.start === 'slow') {
                     healthScore = 55;
                     recommendation = "WARNING: Battery is showing signs of aging. Have it load-tested soon.";
                 } else {
@@ -4718,12 +4730,14 @@
                     };
                 },
                 content: [
+                    /* 
                     {
                         image: 'https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png',
                         width: 100,
                         alignment: 'center',
                         margin: [0, 0, 0, 5]
                     },
+                    */
                     {
                         text: "Jimmy's Auto Care",
                         style: 'header',
@@ -4840,7 +4854,7 @@
                     header: {
                         fontSize: 26,
                         bold: true,
-                        font: 'Playfair Display'
+                        // font: 'Playfair Display' - Removed for compatibility
                     },
                     tagline: {
                         fontSize: 10,
@@ -4974,12 +4988,14 @@
                         };
                     },
                     content: [
+                        /*
                         {
                             image: 'https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png',
                             width: 100,
                             alignment: 'center',
                             margin: [0, 0, 0, 10]
                         },
+                        */
                         { text: "Jimmy's Auto Care", style: 'header', color: '#C9A84C', alignment: 'center' },
                         {
                             text: '6116 N. Elston Ave., Chicago, IL 60646 | (312) 445-5760',
