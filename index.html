@@ -1,0 +1,4243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jimmy's Auto Care | Best Auto Repair Shop in Chicago, IL</title>
+
+    <!-- Advanced SEO Meta Tags -->
+    <meta name="description"
+        content="Jimmy's Auto Care offers premium automotive repair in Chicago, IL. From oil changes and brake service to advanced diagnostics, our certified mechanics provide high-end, transparent care for all makes and models." />
+    <meta name="keywords"
+        content="auto repair chicago, mechanic chicago il, brake service chicago, oil change chicago, car diagnostics chicago, Jimmy's Auto Care, luxury car repair chicago, tires and suspension chicago" />
+    <meta name="author" content="Jimmy's Auto Care" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mandaautoservice.github.io/M-Aautoservice-tireschicago/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mandaautoservice.github.io/M-Aautoservice-tireschicago/" />
+    <meta property="og:title" content="Jimmy's Auto Care | Premium Automotive Excellence in Chicago" />
+    <meta property="og:description"
+        content="Experience transparent, high-end auto repair. Certified technicians, fair pricing, and expert care for your vehicle." />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80&fit=crop" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mandaautoservice.github.io/M-Aautoservice-tireschicago/" />
+    <meta property="twitter:title" content="Jimmy's Auto Care | Chicago's Premier Auto Shop" />
+    <meta property="twitter:description"
+        content="Expert auto repair services including brakes, emissions, and diagnostics. Book your appointment today!" />
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80&fit=crop" />
+
+    <!-- JSON-LD Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Jimmy's Auto Care",
+      "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=85&fit=crop",
+      "@id": "https://mandaautoservice.github.io/M-Aautoservice-tireschicago/",
+      "url": "https://mandaautoservice.github.io/M-Aautoservice-tireschicago/",
+      "telephone": "+13124455760",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6116 N. Elston Ave.",
+        "addressLocality": "Chicago",
+        "addressRegion": "IL",
+        "postalCode": "60646",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.983,
+        "longitude": -87.782
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/JimmysAutoCare",
+        "https://www.instagram.com/JimmysAutoCare"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <style>
+        :root {
+            --white: #FAFAF7;
+            --off-white: #F5F0E8;
+            --gold-light: #F0D080;
+            --gold: #C9A84C;
+            --gold-dark: #9A7B2F;
+            --gold-muted: #D4B870;
+            --red: #C0182A;
+            --red-dark: #8B0F1E;
+            --red-light: #E8202F;
+            --charcoal: #1A1A1A;
+            --charcoal-mid: #2D2D2D;
+            --gray: #6B6B6B;
+            --gray-light: #E8E4DC;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            cursor: none;
+            /* Hide default cursor for custom experience */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* ─── CUSTOM CURSOR ─── */
+        .custom-cursor {
+            width: 12px;
+            height: 12px;
+            background: var(--red);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 100000;
+            transition: transform 0.1s ease-out;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), background 0.3s;
+        }
+
+        .cursor-hover {
+            transform: scale(2);
+            background: rgba(201, 168, 76, 0.1);
+            border-color: var(--red);
+        }
+
+        /* ─── INTERACTIVE CARD TILT ─── */
+        .tilt-card {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* Ensure default cursor shows on specific elements if needed, 
+           but we'll mostly use the custom one */
+        a,
+        button,
+        .health-tab,
+        .social-icon,
+        input,
+        select,
+        textarea {
+            cursor: none;
+        }
+
+        body.loading {
+            overflow: hidden;
+        }
+
+        /* ══════════════════════════════════════
+       PREMIUM SLIDE PRELOADER
+    ══════════════════════════════════════ */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #0E0E0E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        #preloader.pre-exit {
+            transform: translateY(-100%);
+        }
+
+        .pre-content {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        .pre-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(20px, 4vw, 36px);
+            font-weight: 800;
+            letter-spacing: 8px;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .pre-logo-img {
+            width: 350px;
+            height: 280px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: logoFadeIn 1.5s ease-out forwards;
+        }
+
+        @keyframes logoFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .pre-logo .red-text {
+            color: var(--red);
+        }
+
+        .pre-bar-container {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .pre-bar-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: var(--red);
+            box-shadow: 0 0 15px rgba(192, 24, 42, 0.6);
+            transition: width 0.1s linear;
+        }
+
+        .pre-status {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        #prePercent {
+            color: var(--white);
+            margin-left: 5px;
+        }
+
+        /* ─── SCROLLBAR ─── */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--off-white);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(250, 250, 247, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            transition: padding 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        nav.scrolled {
+            padding: 14px 60px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo span:first-child {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--charcoal);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span:first-child em {
+            color: var(--red);
+            font-style: normal;
+        }
+
+        .nav-logo span:last-child {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 38px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--red);
+            color: white !important;
+            padding: 10px 24px !important;
+            letter-spacing: 1.5px !important;
+            transition: background 0.3s ease, transform 0.2s ease !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--red-dark) !important;
+            transform: translateY(-1px);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 40%, #2A1A1A 100%);
+        }
+
+        .hero-bg img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-bg img.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+        }
+
+        .hero-gold-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, transparent 0%, var(--gold) 30%, var(--red) 70%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 80px;
+            max-width: 780px;
+            animation: heroReveal 1.2s ease forwards;
+        }
+
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .hero-badge::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(50px, 7vw, 88px);
+            font-weight: 900;
+            line-height: 1.0;
+            color: var(--white);
+            margin-bottom: 12px;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            display: block;
+        }
+
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 36px;
+            line-height: 1.5;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 520px;
+            margin-bottom: 48px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            padding: 16px 38px;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: translateX(-101%);
+            transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 40px rgba(192, 24, 42, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-secondary {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 0;
+        }
+
+        .btn-secondary::after {
+            content: '→';
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-secondary:hover::after {
+            transform: translateX(6px);
+        }
+
+        /* ─── STATS SECTION ─── */
+        .stats-section {
+            background: #0A0A0A;
+            padding: 0 80px;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.4s ease;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat:hover {
+            background: rgba(201, 168, 76, 0.03);
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 54px;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stat-icon {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.3));
+        }
+
+        .stat-detail {
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 200px;
+            margin: 0 auto;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+        }
+
+        /* ─── SECTION COMMON ─── */
+        section {
+            position: relative;
+        }
+
+        .section-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 54px);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--charcoal);
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--red);
+        }
+
+        /* ─── MARQUEE STRIP ─── */
+        .marquee-strip {
+            background: var(--red);
+            padding: 14px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 0;
+            animation: marquee 22s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0 36px;
+            font-weight: 500;
+        }
+
+        .marquee-dot {
+            color: var(--gold);
+            font-size: 8px;
+        }
+
+        /* ─── IMAGE MARQUEE ─── */
+        .image-marquee {
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+            padding: 2px 0;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .image-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: imageScroll 40s linear infinite;
+        }
+
+        .image-marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .img-slide {
+            width: 320px;
+            height: 320px;
+            flex-shrink: 0;
+            margin-right: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.5);
+            transition: filter 0.6s ease, transform 0.6s ease;
+        }
+
+        .img-slide:hover img {
+            filter: grayscale(0);
+            transform: scale(1.05);
+        }
+
+        @keyframes imageScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-322px * 15));
+            }
+        }
+
+        /* ─── ABOUT ─── */
+        .about {
+            padding: 120px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            background: var(--off-white);
+        }
+
+        .about-images {
+            position: relative;
+            height: 560px;
+        }
+
+        .about-img-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75%;
+            height: 80%;
+            object-fit: cover;
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-img-accent {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            height: 55%;
+            object-fit: cover;
+            box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.12);
+            border: 6px solid var(--white);
+        }
+
+        .about-gold-block {
+            position: absolute;
+            bottom: 90px;
+            left: 55%;
+            width: 70px;
+            height: 70px;
+            background: var(--gold);
+            z-index: -1;
+        }
+
+        .about-content {}
+
+        .about-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin: 24px 0 32px;
+        }
+
+        .about-text strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            padding: 22px 22px;
+            border-left: 2px solid var(--gold);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item h4 {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 120px 80px;
+            position: relative;
+            overflow: hidden;
+            background: #0A0A0A;
+        }
+
+        /* Cinematic background image with overlay */
+        .services-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1800&q=60&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
+        }
+
+        /* Radial glow orbs behind cards */
+        .services-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+        }
+
+        .services-orb-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(201, 168, 76, 0.12);
+            top: -100px;
+            left: -100px;
+        }
+
+        .services-orb-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(192, 24, 42, 0.1);
+            bottom: -80px;
+            right: 0;
+        }
+
+        .services-header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 70px;
+        }
+
+        .services-header .section-title {
+            color: var(--white);
+        }
+
+        .services-header .section-label {
+            color: var(--gold);
+        }
+
+        .services-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        /* ── Glass Service Card (3D Flip) ── */
+        .service-card {
+            perspective: 1200px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            transition: z-index 0.4s;
+            min-height: 280px;
+        }
+
+        .service-card.flipped {
+            z-index: 10;
+        }
+
+        .service-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            display: grid;
+        }
+
+        .service-card.flipped .service-card-inner {
+            transform: scale(1.15) rotateY(180deg);
+        }
+
+        .service-card:hover:not(.flipped) .service-card-inner {
+            transform: translateY(-4px);
+        }
+
+        .service-card-front,
+        .service-card-back {
+            grid-area: 1 / 1;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            padding: 38px 28px 34px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .service-card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Shimmer sweep on hover (apply to front) */
+        .service-card-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover .service-card-front::before {
+            left: 150%;
+        }
+
+        /* Bottom glow line */
+        .service-card-front::after,
+        .service-card-back::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--red));
+            transition: width 0.5s ease;
+        }
+
+        .service-card:hover .service-card-front::after,
+        .service-card.flipped .service-card-back::after {
+            width: 100%;
+        }
+
+        .service-card:hover:not(.flipped) .service-card-front,
+        .service-card.flipped .service-card-back {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(201, 168, 76, 0.35);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 0 0.5px rgba(201, 168, 76, 0.1) inset;
+        }
+
+        /* Accent card — last one */
+        .service-card.accent-card .service-card-front,
+        .service-card.accent-card .service-card-back {
+            background: rgba(192, 24, 42, 0.15);
+            border-color: rgba(192, 24, 42, 0.3);
+            border-top-color: rgba(240, 208, 128, 0.3);
+        }
+
+        .service-card.accent-card:hover:not(.flipped) .service-card-front,
+        .service-card.accent-card.flipped .service-card-back {
+            background: rgba(192, 24, 42, 0.22);
+            border-color: rgba(240, 208, 128, 0.5);
+        }
+
+        .service-icon-wrap {
+            width: 48px;
+            height: 48px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 20px;
+        }
+
+        .service-card:hover .service-icon-wrap {
+            background: rgba(201, 168, 76, 0.18);
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .service-card.accent-card .service-icon-wrap {
+            background: rgba(240, 208, 128, 0.12);
+            border-color: rgba(240, 208, 128, 0.25);
+        }
+
+        .service-card-front h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .service-card-front p {
+            font-size: 11.5px;
+            color: rgba(250, 250, 247, 0.42);
+            line-height: 1.75;
+        }
+
+        .service-num {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-family: 'Playfair Display', serif;
+            font-size: 11px;
+            color: rgba(201, 168, 76, 0.18);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .service-flip-hint {
+            position: absolute;
+            bottom: 14px;
+            right: 18px;
+            font-size: 10px;
+            color: var(--gold);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card:hover .service-flip-hint {
+            opacity: 1;
+        }
+
+        .service-card-back h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .service-card-back ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-card-back ul li {
+            font-size: 12px;
+            color: rgba(250, 250, 247, 0.8);
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .service-card-back ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--red);
+            font-size: 8px;
+        }
+
+        /* ─── GALLERY ─── */
+        .gallery {
+            padding: 120px 80px;
+            background: var(--white);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gallery-header .section-label {
+            justify-content: center;
+        }
+
+        .gallery-header .section-label::before {
+            display: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 280px 280px;
+            gap: 12px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+            filter: grayscale(20%);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+            filter: grayscale(0%);
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.5) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ─── CAR HEALTH TOOLS ─── */
+        .health-tools {
+            padding: 100px 80px;
+            background: #0A0A0A;
+            position: relative;
+            text-align: center;
+        }
+
+        .health-tools-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .health-tools-header .section-label {
+            justify-content: center;
+        }
+
+        .health-tools-header .section-title {
+            color: var(--white);
+        }
+
+        .health-tabs-wrap {
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .health-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .health-tab {
+            background: transparent;
+            border: none;
+            color: rgba(250, 250, 247, 0.5);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .health-tab:hover {
+            color: var(--white);
+        }
+
+        .health-tab.active {
+            background: var(--red);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(192, 24, 42, 0.3);
+        }
+
+        .health-tool-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(201, 168, 76, 0.3);
+            padding: 40px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .tool-panel {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tool-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tool-panel h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .tool-input-group {
+            margin-bottom: 20px;
+        }
+
+        .tool-input-group label {
+            display: block;
+            font-size: 11px;
+            color: rgba(250, 250, 247, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .tool-input-group input[type="number"],
+        .tool-input-group input[type="text"],
+        .tool-input-group select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            padding: 14px 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .tool-input-group input[type="number"]:focus,
+        .tool-input-group select:focus {
+            border-color: var(--gold);
+        }
+
+        .tool-input-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--red);
+            margin-top: 8px;
+        }
+
+        .range-val {
+            text-align: right;
+            font-size: 12px;
+            color: var(--gold-light);
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ─── LEAD GEN POPUP ─── */
+        .lead-popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lead-popup-overlay.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lead-popup-content {
+            background: var(--off-white);
+            width: 100%;
+            max-width: 480px;
+            padding: 50px 40px;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border-top: 3px solid var(--red);
+        }
+
+        .lead-popup-overlay.show .lead-popup-content {
+            transform: scale(1);
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--charcoal);
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .close-popup:hover {
+            opacity: 1;
+        }
+
+        .popup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .popup-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .popup-header h3 em {
+            color: var(--red);
+            font-style: italic;
+        }
+
+        .popup-header p {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .input-wrap {
+            margin-bottom: 16px;
+        }
+
+        .input-wrap input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-wrap input:focus {
+            border-color: var(--gold);
+        }
+
+        /* ─── HOURS + CONTACT ─── */
+        .contact-section {
+            padding: 0 80px 120px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .hours-card,
+        .contact-card {
+            padding: 60px 50px;
+            position: relative;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hours-card {
+            background: rgba(192, 24, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(240, 208, 128, 0.35);
+            box-shadow: 0 24px 70px rgba(192, 24, 42, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            color: white;
+        }
+
+        .contact-card {
+            background: rgba(245, 240, 232, 0.75);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-top: 1px solid rgba(201, 168, 76, 0.4);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+        }
+
+        .hours-card .section-label {
+            color: rgba(240, 208, 128, 0.8);
+        }
+
+        .hours-card .section-label::before {
+            background: rgba(240, 208, 128, 0.8);
+        }
+
+        .hours-card .section-title {
+            color: white;
+            font-size: 36px;
+        }
+
+        .hours-table {
+            margin-top: 36px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 13px;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .hours-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .hours-time.closed {
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .contact-card {
+            background: var(--off-white);
+        }
+
+        .contact-info {
+            margin-top: 36px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .contact-detail {
+            flex: 1;
+        }
+
+        .contact-detail label {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .contact-detail a,
+        .contact-detail span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            color: var(--charcoal);
+            text-decoration: none;
+            line-height: 1.4;
+            display: block;
+        }
+
+        .contact-detail a:hover {
+            color: var(--red);
+        }
+
+        /* ─── OWNER PRESTIGE SECTION ─── */
+        .owner-prestige {
+            padding: 160px 80px;
+            background: #080808;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+
+        .owner-prestige::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .owner-image-wrap {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .owner-portrait {
+            width: 100%;
+            max-width: 500px;
+            height: 700px;
+            object-fit: cover;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            box-shadow: 40px 40px 0 rgba(201, 168, 76, 0.05);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .owner-portrait:hover {
+            box-shadow: 20px 20px 0 rgba(201, 168, 76, 0.15);
+        }
+
+        .owner-content {
+            flex: 1.2;
+            z-index: 2;
+        }
+
+        .owner-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .owner-quote::before {
+            content: '"';
+            position: absolute;
+            left: -40px;
+            top: -20px;
+            font-size: 120px;
+            color: var(--gold);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .owner-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .owner-title {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .owner-story {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 550px;
+            margin-bottom: 50px;
+        }
+
+        .owner-signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--white);
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .prestige-accent {
+            position: absolute;
+            right: -100px;
+            bottom: -50px;
+            font-size: 300px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* ─── FLOATING COMMUNICATION HUB ─── */
+        .comm-hub {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .comm-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            background: var(--charcoal);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .comm-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+
+        .comm-btn.call-btn {
+            background: var(--red);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.2);
+            animation: pulseCall 2s infinite;
+        }
+
+        .comm-btn.call-btn:hover {
+            background: white;
+            color: var(--red);
+        }
+
+        @keyframes pulseCall {
+            0% {
+                box-shadow: 0 0 0 0 rgba(192, 24, 42, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(192, 24, 42, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(192, 24, 42, 0);
+            }
+        }
+
+        .comm-tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 8px 15px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comm-btn:hover .comm-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .comm-hub {
+                bottom: 25px;
+                right: 20px;
+            }
+
+            .comm-btn {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* ─── PREMIUM BOOKING ─── */
+        .booking-wrap {
+            margin-top: 40px;
+            border-top: 1px solid var(--gray-light);
+            padding-top: 30px;
+        }
+
+        .btn-booking {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: white;
+            padding: 18px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-booking:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.4);
+            background: linear-gradient(135deg, var(--gold), var(--gold-muted));
+        }
+
+        .booking-form-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), margin-top 0.4s;
+            background: var(--white);
+            border: 0 solid var(--gold-muted);
+        }
+
+        .booking-form-container.active {
+            max-height: 1200px;
+            margin-top: 24px;
+            padding: 24px;
+            border-width: 1px;
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .book-input-group {
+            margin-bottom: 20px;
+        }
+
+        .book-input-group label {
+            display: block;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .book-input-group input,
+        .book-input-group select,
+        .book-input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #fafafa;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .book-input-group input:focus {
+            border-color: var(--gold);
+        }
+
+        .file-upload-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 2px dashed rgba(201, 168, 76, 0.3);
+            background: rgba(201, 168, 76, 0.03);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .file-upload-label:hover {
+            background: rgba(201, 168, 76, 0.08);
+            border-color: var(--gold);
+        }
+
+        #image-preview {
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: none;
+            margin-top: 10px;
+            border: 1px solid var(--gold-muted);
+        }
+
+        /* ─── FULL WIDTH MAP ─── */
+        .map-full {
+            width: 100%;
+            height: 480px;
+            position: relative;
+        }
+
+        .map-full iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            filter: grayscale(25%) contrast(1.08) saturate(0.9);
+        }
+
+        .map-full-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.18);
+        }
+
+        .map-pin-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -80px);
+            background: var(--red);
+            color: white;
+            padding: 12px 22px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 32px rgba(192, 24, 42, 0.5);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .map-pin-badge::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--red);
+        }
+
+        .map-directions-btn {
+            position: absolute;
+            bottom: 28px;
+            right: 36px;
+            background: var(--charcoal);
+            color: white;
+            padding: 14px 28px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.2s ease;
+            pointer-events: all;
+        }
+
+        .map-directions-btn:hover {
+            background: var(--red);
+            transform: translateY(-2px);
+        }
+
+        /* ─── TESTIMONIAL STRIP ─── */
+        /* ─── TESTIMONIAL STRIP ─── */
+        .testimonial {
+            background: #0D0C0C;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .testimonial-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1400&q=40&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+        }
+
+        .testimonial-track {
+            display: flex;
+            width: max-content;
+            animation: reviewScroll 60s linear infinite;
+        }
+
+        .testimonial-track:hover {
+            animation-play-state: paused;
+        }
+
+        .review-card {
+            width: 450px;
+            padding: 40px;
+            margin: 0 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            z-index: 1;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--white);
+            margin: 0 0 16px;
+            line-height: 1.5;
+        }
+
+        .testimonial cite {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-style: normal;
+            display: block;
+            font-weight: 600;
+        }
+
+        @keyframes reviewScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-490px * 7));
+            }
+        }
+
+        /* ─── CTA BAND ─── */
+        .cta-band {
+            padding: 100px 80px;
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .cta-band h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--charcoal);
+            max-width: 520px;
+        }
+
+        .cta-band h2 em {
+            color: var(--red);
+            font-style: italic;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 18px;
+            flex-shrink: 0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1.5px solid var(--charcoal);
+            padding: 16px 36px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: radial-gradient(circle at 50% 0%, #1A1A1A 0%, #0A0A0A 100%);
+            padding: 60px 80px 30px;
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-brand .nav-logo span:first-child {
+            font-size: 32px;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: rgba(250, 250, 247, 0.4);
+            margin-top: 20px;
+            max-width: 300px;
+            line-height: 1.8;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .footer-links h4 {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 20px;
+            height: 1px;
+            background: var(--red);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: rgba(250, 250, 247, 0.4);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .social-icon:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: rgba(250, 250, 247, 0.3);
+            text-transform: uppercase;
+        }
+
+        .footer-bottom span {
+            color: var(--gold-dark);
+        }
+
+        /* ─── FADE-IN ANIMATION ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 18px 30px;
+            }
+
+            .hero-content {
+                padding: 0 40px;
+            }
+
+            .hero-stats {
+                right: 30px;
+                bottom: 40px;
+            }
+
+            .about,
+            .gallery,
+            .services {
+                padding: 80px 40px;
+            }
+
+            .contact-section {
+                padding: 0 40px 80px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .cta-band {
+                padding: 70px 40px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            footer {
+                padding: 50px 40px 30px;
+            }
+
+            .testimonial-glass {
+                padding: 50px 44px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .about-images {
+                height: 340px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                padding: 0 24px 60px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+
+            .gallery-item:first-child {
+                grid-row: span 1;
+            }
+
+            .hero-stats {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                padding: 0 40px;
+                margin-top: 40px;
+                gap: 2px;
+            }
+
+            .hero-content {
+                padding: 0 30px;
+            }
+
+            .services-header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .testimonial {
+                padding: 60px 24px;
+            }
+
+            .testimonial-glass {
+                padding: 36px 28px;
+            }
+
+            .health-tools {
+                padding: 60px 30px;
+            }
+
+            .health-tool-content {
+                padding: 30px 20px;
+            }
+
+            .lead-popup-content {
+                padding: 40px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+    <!-- ══════════ PRELOADER ══════════ -->
+    <div id="preloader">
+        <div class="pre-content">
+            <img src="https://i.postimg.cc/2yqpyTQS/Chat-GPT-Image-Apr-23-2026-08-13-59-AM.png" alt="Jimmy's Auto Care Logo" class="pre-logo-img">
+            <div class="pre-logo">
+                Jimmy's <span class="red-text">Auto</span> Care
+            </div>
+            <div class="pre-bar-container">
+                <div class="pre-bar-fill" id="preBarFill"></div>
+            </div>
+            <div class="pre-status">
+                Preparing Your Experience — <span id="prePercent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ NAV ══════════ -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <span><em>Jimmy's</em> Auto Care</span>
+            <span>Chicago's Premier Auto Service</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:3124455760" class="nav-cta">Call Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="https://iili.io/B4ar67a.jpg" class="active" alt="Automotive Service 1" />
+            <img src="https://iili.io/B4argrF.jpg" alt="Automotive Service 2" />
+            <img src="https://iili.io/B4arkXV.jpg" alt="Automotive Service 3" />
+            <img src="https://iili.io/B4arezQ.jpg" alt="Automotive Service 4" />
+            <img src="https://iili.io/B4arwej.jpg" alt="Automotive Service 5" />
+            <img src="https://iili.io/B4arcb4.jpg" alt="Automotive Service 6" />
+            <img src="https://iili.io/B4arRgn.jpg" alt="Automotive Service 7" />
+            <img src="https://iili.io/B4arIsI.jpg" alt="Automotive Service 8" />
+            <img src="https://iili.io/B4aruft.jpg" alt="Automotive Service 9" />
+            <img src="https://iili.io/B4arA0X.jpg" alt="Automotive Service 10" />
+            <img src="https://iili.io/B4arcb4.jpg" alt="Automotive Service 11" />
+            <img src="https://images.unsplash.com/photo-1493238555826-397b2d3b8193?w=1800&q=85&fit=crop"
+                alt="Automotive Service 12" />
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1800&q=85&fit=crop"
+                alt="Automotive Service 13" />
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1800&q=85&fit=crop"
+                alt="Automotive Service 14" />
+            <img src="https://images.unsplash.com/photo-1469285994282-454ceb49e63c?w=1800&q=85&fit=crop"
+                alt="Automotive Service 15" />
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1800&q=85&fit=crop"
+                alt="Automotive Service 16" />
+            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=1800&q=85&fit=crop"
+                alt="Automotive Service 17" />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-gold-line"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">Chicago's Trusted Auto Experts</div>
+            <h1>
+                Jimmy's
+                <span>Auto Care</span>
+            </h1>
+            <p class="hero-sub">Complete Automotive Repair Shop</p>
+            <p class="hero-desc">
+                Precision craftsmanship. Honest service. Located in the heart of Chicago,
+                we treat every vehicle with the care and expertise it deserves — from a routine
+                oil change to complex diagnostics.
+            </p>
+            <div class="hero-actions">
+                <a href="tel:3124455760" class="btn-primary"><span>Call 312-445-5760</span></a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ STATS SECTION ══════════ -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat fade-up">
+                <div class="stat-num counter" data-target="25">0</div>
+                <span class="stat-label">Years of Mastery</span>
+                <p class="stat-detail">Decades of specialized mechanical engineering experience.</p>
+            </div>
+            <div class="stat fade-up">
+                <div class="stat-num counter" data-target="5800">0</div>
+                <span class="stat-label">Luxury Vehicles</span>
+                <p class="stat-detail">Trusted by Chicago's most discerning automobile owners.</p>
+            </div>
+            <div class="stat fade-up">
+                <div class="stat-num counter" data-target="100">0</div>
+                <span class="stat-label">% Transparency</span>
+                <p class="stat-detail">Direct honesty and clear diagnostics on every repair.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <!-- Doubled for seamless loop -->
+            <span class="marquee-item">Brakes <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Emissions <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Electrical <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Oil Change <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Suspension <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Tires <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Tune-Ups <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Diagnostics <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Brakes <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Emissions <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Electrical <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Oil Change <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Suspension <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Tires <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Tune-Ups <span class="marquee-dot">◆</span></span>
+            <span class="marquee-item">Diagnostics <span class="marquee-dot">◆</span></span>
+        </div>
+    </div>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="about" id="about">
+        <div class="about-images fade-up">
+            <img class="about-img-main"
+                src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=85&fit=crop"
+                alt="Expert auto mechanic at work" />
+            <img class="about-img-accent" src="https://iili.io/B4arB5J.jpg" alt="Luxury vehicle engine" />
+            <div class="about-gold-block"></div>
+        </div>
+        <div class="about-content fade-up">
+            <div class="section-label">Who We Are</div>
+            <h2 class="section-title">Built on Trust.<br><em>Driven by</em> Excellence.</h2>
+            <p class="about-text">
+                At <strong>Jimmy's Auto Care</strong>, we believe your vehicle deserves more than a quick fix —
+                it deserves a team that takes pride in every bolt tightened, every diagnostic run, and every
+                mile that follows. Serving Chicago's North Side for years, we've built our reputation on
+                <strong>transparency, precision, and genuine care</strong>.
+            </p>
+            <div class="about-features">
+                <div class="feature-item">
+                    <h4>Certified Technicians</h4>
+                    <p>Factory-trained experts with years of hands-on experience.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Transparent Pricing</h4>
+                    <p>No hidden fees. No surprises. Honest estimates upfront.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>All Makes & Models</h4>
+                    <p>Domestic and foreign vehicles welcome, old or new.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Quality Guaranteed</h4>
+                    <p>Premium parts and craftsmanship you can count on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ IMAGE ROTATING FRAME ══════════ -->
+    <div class="image-marquee">
+        <div class="image-marquee-track">
+            <!-- 15 Images -->
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&q=80&fit=crop"
+                    alt="Car Care 1"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?w=500&q=80&fit=crop"
+                    alt="Car Care 2"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=500&q=80&fit=crop"
+                    alt="Car Care 3"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1506469717960-433cebe3f181?w=500&q=80&fit=crop"
+                    alt="Car Care 4"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1487754164641-a396b318aa6a?w=500&q=80&fit=crop"
+                    alt="Car Care 5"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=500&q=80&fit=crop"
+                    alt="Car Care 6"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500&q=80&fit=crop"
+                    alt="Car Care 7"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?w=500&q=80&fit=crop"
+                    alt="Car Care 8"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=500&q=80&fit=crop"
+                    alt="Car Care 9"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1526726538690-5cbf95642cb0?w=500&q=80&fit=crop"
+                    alt="Car Care 10"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&q=80&fit=crop"
+                    alt="Car Care 11"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=500&q=80&fit=crop"
+                    alt="Car Care 12"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&q=80&fit=crop"
+                    alt="Car Care 13"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500&q=80&fit=crop"
+                    alt="Car Care 14"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80&fit=crop"
+                    alt="Car Care 15"></div>
+            <!-- Duplicated for loop -->
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&q=80&fit=crop"
+                    alt="Car Care 1"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?w=500&q=80&fit=crop"
+                    alt="Car Care 2"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=500&q=80&fit=crop"
+                    alt="Car Care 3"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1506469717960-433cebe3f181?w=500&q=80&fit=crop"
+                    alt="Car Care 4"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1487754164641-a396b318aa6a?w=500&q=80&fit=crop"
+                    alt="Car Care 5"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=500&q=80&fit=crop"
+                    alt="Car Care 6"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500&q=80&fit=crop"
+                    alt="Car Care 7"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?w=500&q=80&fit=crop"
+                    alt="Car Care 8"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=500&q=80&fit=crop"
+                    alt="Car Care 9"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1526726538690-5cbf95642cb0?w=500&q=80&fit=crop"
+                    alt="Car Care 10"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&q=80&fit=crop"
+                    alt="Car Care 11"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=500&q=80&fit=crop"
+                    alt="Car Care 12"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&q=80&fit=crop"
+                    alt="Car Care 13"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500&q=80&fit=crop"
+                    alt="Car Care 14"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80&fit=crop"
+                    alt="Car Care 15"></div>
+        </div>
+    </div>
+
+    <!-- ══════════ SERVICES ══════════ -->
+    <section class="services" id="services">
+        <div class="services-bg"></div>
+        <div class="services-orb services-orb-1"></div>
+        <div class="services-orb services-orb-2"></div>
+
+        <div class="services-header fade-up">
+            <div>
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Our <em>Services</em></h2>
+            </div>
+            <p style="color:rgba(250,250,247,0.4); font-size:13px; max-width:280px; line-height:1.8; text-align:right;">
+                14 specialist services. One trusted shop. Chicago's premier auto care, all under one roof.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">01</span>
+                        <div class="service-icon-wrap">🛞</div>
+                        <h3>Brakes</h3>
+                        <p>Full inspections, pad replacements, rotor resurfacing and hydraulic repairs for total
+                            stopping confidence.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Brakes</h3>
+                        <ul>
+                            <li>Comprehensive Brake Inspection</li>
+                            <li>Brake Pad & Shoe Replacement</li>
+                            <li>Rotor Resurfacing or Replacement</li>
+                            <li>Brake Fluid Flush & Bleed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">02</span>
+                        <div class="service-icon-wrap">🌿</div>
+                        <h3>Emissions</h3>
+                        <p>State-certified Illinois emissions testing and targeted repairs to keep you road-legal and
+                            compliant.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Emissions</h3>
+                        <ul>
+                            <li>State-Certified Emissions Testing</li>
+                            <li>O2 Sensor Replacement</li>
+                            <li>Catalytic Converter Repair</li>
+                            <li>Evaporative System Diagnostics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">03</span>
+                        <div class="service-icon-wrap">⚡</div>
+                        <h3>Electrical</h3>
+                        <p>Diagnosis and repair of wiring, batteries, alternators, starters and all onboard electronic
+                            systems.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Electrical</h3>
+                        <ul>
+                            <li>Wiring Diagram Diagnostics</li>
+                            <li>Battery & Alternator Testing</li>
+                            <li>Starter Motor Replacement</li>
+                            <li>Fuse & Relay Troubleshooting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">04</span>
+                        <div class="service-icon-wrap">🛢️</div>
+                        <h3>Oil Change</h3>
+                        <p>Conventional and full-synthetic oil changes with filter swap and multi-point fluid level
+                            inspection.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Oil Change</h3>
+                        <ul>
+                            <li>Synthetic & Conventional Oil</li>
+                            <li>High-Quality Filter Replacement</li>
+                            <li>Fluid Level Top-Offs</li>
+                            <li>Comprehensive Multi-Point Inspection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">05</span>
+                        <div class="service-icon-wrap">🔧</div>
+                        <h3>Suspension</h3>
+                        <p>Shocks, struts, control arms and precision wheel alignment for a smooth, safe and responsive
+                            ride.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Suspension</h3>
+                        <ul>
+                            <li>Shock & Strut Replacement</li>
+                            <li>Control Arm & Bushing Repair</li>
+                            <li>Precision Wheel Alignment</li>
+                            <li>Steering Rack Diagnostics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">06</span>
+                        <div class="service-icon-wrap">🏁</div>
+                        <h3>Tires</h3>
+                        <p>Mounting, balancing, rotation and pressure checks — with access to top-brand tire inventory.
+                        </p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Tires</h3>
+                        <ul>
+                            <li>Professional Tire Mounting</li>
+                            <li>Computerized Wheel Balancing</li>
+                            <li>Tire Rotation Services</li>
+                            <li>TPMS Sensor Replacement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">07</span>
+                        <div class="service-icon-wrap">⚙️</div>
+                        <h3>Tune-Ups</h3>
+                        <p>Spark plugs, air filters, fuel system cleaning and full engine tune-ups for peak performance.
+                        </p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Tune-Ups</h3>
+                        <ul>
+                            <li>Spark Plug & Wire Replacement</li>
+                            <li>Engine Air Filter Swap</li>
+                            <li>Fuel Injector Cleaning</li>
+                            <li>Ignition System Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">08</span>
+                        <div class="service-icon-wrap">❄️</div>
+                        <h3>AC & Climate</h3>
+                        <p>Refrigerant recharge, compressor repair and full HVAC system diagnostics for year-round
+                            comfort.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>AC & Climate</h3>
+                        <ul>
+                            <li>AC Refrigerant Recharge</li>
+                            <li>Compressor & Condenser Repair</li>
+                            <li>Cabin Air Filter Replacement</li>
+                            <li>Heater Core Diagnostics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">09</span>
+                        <div class="service-icon-wrap">🌡️</div>
+                        <h3>Cooling System</h3>
+                        <p>Radiator flush, thermostat replacement, hose inspection and coolant leak repair to prevent
+                            overheating.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Cooling System</h3>
+                        <ul>
+                            <li>Complete Radiator Flush</li>
+                            <li>Thermostat Replacement</li>
+                            <li>Water Pump Service</li>
+                            <li>Coolant Leak Detection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">10</span>
+                        <div class="service-icon-wrap">🔍</div>
+                        <h3>Engine Diagnostics</h3>
+                        <p>Advanced OBD-II computer scanning and mechanical inspection to pinpoint any check-engine
+                            issue fast.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Engine Diagnostics</h3>
+                        <ul>
+                            <li>OBD-II Computer Scanning</li>
+                            <li>Check Engine Light Analysis</li>
+                            <li>Performance Data Logging</li>
+                            <li>Compression Testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">11</span>
+                        <div class="service-icon-wrap">🔩</div>
+                        <h3>Transmission</h3>
+                        <p>Fluid services, filter changes, solenoid repairs and full transmission diagnostics for smooth
+                            shifting.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Transmission</h3>
+                        <ul>
+                            <li>Transmission Fluid Exchange</li>
+                            <li>Filter & Gasket Replacement</li>
+                            <li>Solenoid & Sensor Repair</li>
+                            <li>Drivetrain Diagnostics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">12</span>
+                        <div class="service-icon-wrap">💧</div>
+                        <h3>Fluid Services</h3>
+                        <p>Complete flush and fill for brake, power steering, differential and transfer case fluids on
+                            schedule.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Fluid Services</h3>
+                        <ul>
+                            <li>Power Steering Flush</li>
+                            <li>Differential Fluid Service</li>
+                            <li>Transfer Case Maintenance</li>
+                            <li>Brake Fluid Exchange</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">13</span>
+                        <div class="service-icon-wrap">🔋</div>
+                        <h3>Battery & Charging</h3>
+                        <p>Battery load testing, replacement, terminal cleaning and full charging system health
+                            assessment.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>Battery & Charging</h3>
+                        <ul>
+                            <li>Load & Capacity Testing</li>
+                            <li>New Battery Installation</li>
+                            <li>Terminal & Cable Cleaning</li>
+                            <li>Alternator Output Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card accent-card fade-up" onclick="this.classList.toggle('flipped')">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <span class="service-num">+</span>
+                        <div class="service-icon-wrap">✨</div>
+                        <h3>And Much More</h3>
+                        <p>Exhaust, belts, timing chains, fuel injection — call us and we'll handle whatever your
+                            vehicle needs.</p>
+                        <div class="service-flip-hint">Click for Details ↻</div>
+                    </div>
+                    <div class="service-card-back">
+                        <h3>And Much More</h3>
+                        <ul>
+                            <li>Custom Exhaust Work</li>
+                            <li>Timing Belt/Chain Service</li>
+                            <li>Pre-Purchase Inspections</li>
+                            <li>Fleet Maintenance Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════ IMAGE ROTATING FRAME 2 ══════════ -->
+    <div class="image-marquee">
+        <div class="image-marquee-track">
+            <!-- 15 Images -->
+            <div class="img-slide"><img src="https://iili.io/B4ar67a.jpg" alt="Car Care 1"></div>
+            <div class="img-slide"><img src="https://iili.io/B4argrF.jpg" alt="Car Care 2"></div>
+            <div class="img-slide"><img src="https://iili.io/B4arA0X.jpg" alt="Car Care 3"></div>
+            <div class="img-slide"><img src="https://iili.io/B4aruft.jpg" alt="Car Care 4"></div>
+            <div class="img-slide"><img src="https://iili.io/B4arIsI.jpg" alt="Car Care 5"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=500&q=80&fit=crop"
+                    alt="Car Care 6"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500&q=80&fit=crop"
+                    alt="Car Care 7"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?w=500&q=80&fit=crop"
+                    alt="Car Care 8"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=500&q=80&fit=crop"
+                    alt="Car Care 9"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1526726538690-5cbf95642cb0?w=500&q=80&fit=crop"
+                    alt="Car Care 10"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&q=80&fit=crop"
+                    alt="Car Care 11"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=500&q=80&fit=crop"
+                    alt="Car Care 12"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&q=80&fit=crop"
+                    alt="Car Care 13"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500&q=80&fit=crop"
+                    alt="Car Care 14"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80&fit=crop"
+                    alt="Car Care 15"></div>
+            <!-- Duplicated for loop -->
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&q=80&fit=crop"
+                    alt="Car Care 1"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?w=500&q=80&fit=crop"
+                    alt="Car Care 2"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=500&q=80&fit=crop"
+                    alt="Car Care 3"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1506469717960-433cebe3f181?w=500&q=80&fit=crop"
+                    alt="Car Care 4"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1487754164641-a396b318aa6a?w=500&q=80&fit=crop"
+                    alt="Car Care 5"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=500&q=80&fit=crop"
+                    alt="Car Care 6"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500&q=80&fit=crop"
+                    alt="Car Care 7"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?w=500&q=80&fit=crop"
+                    alt="Car Care 8"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=500&q=80&fit=crop"
+                    alt="Car Care 9"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1526726538690-5cbf95642cb0?w=500&q=80&fit=crop"
+                    alt="Car Care 10"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&q=80&fit=crop"
+                    alt="Car Care 11"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=500&q=80&fit=crop"
+                    alt="Car Care 12"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&q=80&fit=crop"
+                    alt="Car Care 13"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500&q=80&fit=crop"
+                    alt="Car Care 14"></div>
+            <div class="img-slide"><img
+                    src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80&fit=crop"
+                    alt="Car Care 15"></div>
+        </div>
+    </div>
+
+    <!-- ══════════ OWNER PRESTIGE SECTION ══════════ -->
+    <section class="owner-prestige">
+        <div class="prestige-accent">JIMMY</div>
+        <div class="owner-image-wrap fade-up">
+            <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&q=90&fit=crop"
+                alt="Jimmy - The Master Artisan" class="owner-portrait">
+        </div>
+        <div class="owner-content fade-up">
+            <span class="owner-name">Jimmy Petrovic</span>
+            <span class="owner-title">Master Artisan & Visionary</span>
+            <h2 class="owner-quote">
+                "To me, a car is not just a machine. It's a masterpiece of engineering that deserves a legacy of care."
+            </h2>
+            <p class="owner-story">
+                With over 25 years of hands-on experience under the hood of everything from vintage classics to modern
+                high-performance supercars, Jimmy founded this shop on a single principle: absolute transparency.
+                <br><br>
+                Every bolt turned and every diagnostic run is performed with the precision of a craftsman and the heart
+                of an enthusiast. At Jimmy's Auto Care, you're not just a customer — you're part of a heritage of
+                automotive excellence.
+            </p>
+            <div class="owner-signature">Jimmy Petrovic</div>
+        </div>
+    </section>
+
+    <!-- ══════════ GALLERY ══════════ -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-header fade-up">
+            <div class="section-label">Our Work</div>
+            <h2 class="section-title">Inside the <em>Shop</em></h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://iili.io/B4arB5J.jpg" alt="Auto repair shop" />
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80&fit=crop"
+                    alt="Mechanic working" />
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&q=80&fit=crop"
+                    alt="Car engine" />
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=600&q=80&fit=crop"
+                    alt="Tire service" />
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://iili.io/B4arIsI.jpg" alt="Auto diagnostics" />
+                <div class="gallery-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ CAR HEALTH TOOLS ══════════ -->
+    <section class="health-tools" id="health-tools">
+        <div class="health-tools-bg"></div>
+        <div class="health-tools-header fade-up">
+            <div class="section-label">Interactive Diagnosis</div>
+            <h2 class="section-title">Check Your <em>Car's Health</em></h2>
+            <p
+                style="color:rgba(250,250,247,0.5); font-size:13px; max-width:400px; margin: 10px auto 0; line-height:1.6;">
+                Use our interactive tools below to estimate the health of your vehicle's essential systems.
+            </p>
+        </div>
+
+        <div class="health-tabs-wrap fade-up">
+            <div class="health-tabs">
+                <button class="health-tab active" data-target="tool-oil">Oil Change</button>
+                <button class="health-tab" data-target="tool-brakes">Brakes</button>
+                <button class="health-tab" data-target="tool-fuel">Fuel Economy</button>
+                <button class="health-tab" data-target="tool-tires">Tires</button>
+                <button class="health-tab" data-target="tool-battery">Battery</button>
+            </div>
+        </div>
+
+        <div class="health-tool-content fade-up">
+            <!-- Oil Change Tool -->
+            <div class="tool-panel active" id="tool-oil">
+                <h3>Oil Life Calculator</h3>
+                <div class="tool-input-group">
+                    <label>Current Mileage</label>
+                    <input type="number" id="oil-current-miles" placeholder="e.g. 45000">
+                </div>
+                <div class="tool-input-group">
+                    <label>Mileage at Last Oil Change</label>
+                    <input type="number" id="oil-last-miles" placeholder="e.g. 40000">
+                </div>
+                <div class="tool-input-group">
+                    <label>Oil Type Used</label>
+                    <select id="oil-type">
+                        <option value="conventional">Conventional (3,000 miles)</option>
+                        <option value="synthetic-blend">Synthetic Blend (5,000 miles)</option>
+                        <option value="full-synthetic">Full Synthetic (7,500+ miles)</option>
+                    </select>
+                </div>
+                <button class="btn-primary calculate-btn" data-tool="Oil Change"><span>Calculate Health</span></button>
+            </div>
+
+            <!-- Brakes Tool -->
+            <div class="tool-panel" id="tool-brakes">
+                <h3>Brake Pad Estimator</h3>
+                <div class="tool-input-group">
+                    <label>Estimated Pad Thickness</label>
+                    <input type="range" id="brake-thickness" min="0" max="12" step="1" value="6">
+                    <div class="range-val"><span id="brake-thickness-val">6</span> mm</div>
+                </div>
+                <div class="tool-input-group">
+                    <label>Any abnormal noises when braking?</label>
+                    <select id="brake-noise">
+                        <option value="none">No, completely silent</option>
+                        <option value="squeaking">High-pitched squeaking</option>
+                        <option value="grinding">Harsh grinding metal</option>
+                    </select>
+                </div>
+                <button class="btn-primary calculate-btn" data-tool="Brakes"><span>Calculate Health</span></button>
+            </div>
+
+            <!-- Fuel Economy Tool -->
+            <div class="tool-panel" id="tool-fuel">
+                <h3>MPG Efficiency Tracker</h3>
+                <div class="tool-input-group">
+                    <label>Miles Driven (Since last fill-up)</label>
+                    <input type="number" id="fuel-miles" placeholder="e.g. 300">
+                </div>
+                <div class="tool-input-group">
+                    <label>Gallons of Gas Filled</label>
+                    <input type="number" id="fuel-gallons" placeholder="e.g. 12.5">
+                </div>
+                <button class="btn-primary calculate-btn" data-tool="Fuel Economy"><span>Calculate
+                        Health</span></button>
+            </div>
+
+            <!-- Tires Tool -->
+            <div class="tool-panel" id="tool-tires">
+                <h3>Tire Tread & Wear Check</h3>
+                <div class="tool-input-group">
+                    <label>Estimated Tread Depth (x/32 inch)</label>
+                    <input type="range" id="tire-tread" min="1" max="11" step="1" value="6">
+                    <div class="range-val"><span id="tire-tread-val">6</span>/32"</div>
+                </div>
+                <div class="tool-input-group">
+                    <label>Visible Wear Pattern</label>
+                    <select id="tire-wear">
+                        <option value="even">Evenly worn across</option>
+                        <option value="center">Worn mostly in the center</option>
+                        <option value="edges">Worn mostly on the edges</option>
+                        <option value="one-side">Worn on one side only</option>
+                    </select>
+                </div>
+                <button class="btn-primary calculate-btn" data-tool="Tires"><span>Calculate Health</span></button>
+            </div>
+
+            <!-- Battery Tool -->
+            <div class="tool-panel" id="tool-battery">
+                <h3>Battery Life Estimator</h3>
+                <div class="tool-input-group">
+                    <label>Battery Age (Years)</label>
+                    <input type="range" id="battery-age" min="0" max="8" step="0.5" value="2.5">
+                    <div class="range-val"><span id="battery-age-val">2.5</span> Years</div>
+                </div>
+                <div class="tool-input-group">
+                    <label>Starting Behavior</label>
+                    <select id="battery-start">
+                        <option value="normal">Starts instantly, no issues</option>
+                        <option value="slow">Cranks slowly before starting</option>
+                        <option value="click">Sometimes just clicks, needs jump</option>
+                    </select>
+                </div>
+                <button class="btn-primary calculate-btn" data-tool="Battery"><span>Calculate Health</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ TESTIMONIAL ══════════ -->
+    <section class="testimonial">
+        <div class="testimonial-bg"></div>
+        <div class="testimonial-track">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Honest, fast, and the quality of their work is second to none. They treat your car like
+                    it's their own."</blockquote>
+                <cite>— Maria T. | Loyal Customer</cite>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Finally found a mechanic I can trust in Chicago. They explained everything clearly and
+                    fixed my AC in no time."</blockquote>
+                <cite>— David R. | Verified Owner</cite>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Super professional service. The health report they gave me was incredibly detailed. Highly
+                    recommend!"</blockquote>
+                <cite>— Sarah L. | Local Guide</cite>
+            </div>
+            <!-- Review 4 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Best prices for high-quality synthetic oil changes. Fast, friendly, and they even checked
+                    my tires for free."</blockquote>
+                <cite>— Michael K. | Daily Driver</cite>
+            </div>
+            <!-- Review 5 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"I've brought both my classic car and my daily driver here. They handle both with absolute
+                    precision."</blockquote>
+                <cite>— James W. | Car Enthusiast</cite>
+            </div>
+            <!-- Review 6 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Very transparent about what needed to be fixed now and what could wait. No pressure sales,
+                    just good work."</blockquote>
+                <cite>— Elena M. | Business Owner</cite>
+            </div>
+            <!-- Review 7 -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Excellent communication and fast turnaround. Jimmy's is the only shop I'll go to from now
+                    on."</blockquote>
+                <cite>— Robert P. | Satisfied Client</cite>
+            </div>
+            <!-- Duplicated for seamless loop -->
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Honest, fast, and the quality of their work is second to none. They treat your car like
+                    it's their own."</blockquote>
+                <cite>— Maria T. | Loyal Customer</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Finally found a mechanic I can trust in Chicago. They explained everything clearly and
+                    fixed my AC in no time."</blockquote>
+                <cite>— David R. | Verified Owner</cite>
+            </div>
+            <div class="review-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <blockquote>"Super professional service. The health report they gave me was incredibly detailed. Highly
+                    recommend!"</blockquote>
+                <cite>— Sarah L. | Local Guide</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ HOURS + CONTACT ══════════ -->
+    <section id="contact" style="padding-top:100px; background:var(--white);">
+        <div style="text-align:center; padding: 0 80px 60px;">
+            <div class="section-label fade-up" style="justify-content:center;"><span
+                    style="width:30px;height:1px;background:var(--gold);display:inline-block;margin-right:14px;"></span>Find
+                Us</div>
+            <h2 class="section-title fade-up">Hours &amp; <em>Contact</em></h2>
+        </div>
+        <div class="contact-section">
+            <!-- Hours -->
+            <div class="hours-card fade-up">
+                <div class="section-label" style="color:rgba(240,208,128,0.7);">Business Hours</div>
+                <h3 class="section-title" style="font-size:32px;">We're Open<br><em style="color:var(--gold-light);">&
+                        Ready</em></h3>
+                <div class="hours-table">
+                    <div class="hours-row">
+                        <span class="hours-day">Monday</span>
+                        <span class="hours-time">8:00 AM – 5:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Tuesday</span>
+                        <span class="hours-time">8:00 AM – 5:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Wednesday</span>
+                        <span class="hours-time">8:00 AM – 5:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Thursday</span>
+                        <span class="hours-time">8:00 AM – 5:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Friday</span>
+                        <span class="hours-time">8:00 AM – 5:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Saturday</span>
+                        <span class="hours-time">8:00 AM – 1:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Sunday</span>
+                        <span class="hours-time closed">Closed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-card fade-up">
+                <div class="section-label">Get In Touch</div>
+                <h3 class="section-title" style="font-size:32px;">Visit the <em>Shop</em></h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-detail">
+                            <label>Address</label>
+                            <a href="https://maps.google.com/?q=6116+N+Elston+Ave+Chicago+IL+60646" target="_blank">
+                                6116 N. Elston Ave.<br>Chicago, IL 60646
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-detail">
+                            <label>Phone</label>
+                            <a href="tel:3124455760">312-445-5760</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-detail">
+                            <label>Email</label>
+                            <a href="mailto:Jimmysautocare777@gmail.com">Jimmysautocare777@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Booking -->
+                <div class="booking-wrap">
+                    <button class="btn-booking" id="toggle-booking">
+                        <span>✨ Book Luxurious Appointment</span>
+                        <i class="calendar-icon">📅</i>
+                    </button>
+
+                    <div class="booking-form-container" id="booking-container">
+                        <form id="appointment-form">
+                            <div class="book-input-group">
+                                <label>Full Name</label>
+                                <input type="text" id="book-name" required placeholder="Ex: John Doe">
+                            </div>
+                            <div class="booking-grid">
+                                <div class="book-input-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" id="book-phone" required placeholder="Ex: 312-555-0199">
+                                </div>
+                                <div class="book-input-group">
+                                    <label>Vehicle (Year/Make/Model)</label>
+                                    <input type="text" id="book-vehicle" required placeholder="Ex: 2021 Toyota Camry">
+                                </div>
+                            </div>
+                            <div class="booking-grid">
+                                <div class="book-input-group">
+                                    <label>Preferred Date</label>
+                                    <input type="date" id="book-date" required>
+                                </div>
+                                <div class="book-input-group">
+                                    <label>Preferred Time</label>
+                                    <select id="book-time" required>
+                                        <option value="morning">Morning (8AM - 11AM)</option>
+                                        <option value="afternoon">Afternoon (12PM - 3PM)</option>
+                                        <option value="late">Late (3PM - 5PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="book-input-group">
+                                <label>Service Needed</label>
+                                <textarea id="book-service" rows="2" required
+                                    placeholder="Describe the issue..."></textarea>
+                            </div>
+                            <div class="book-input-group">
+                                <label>Upload Image (Optional - Damage/Part)</label>
+                                <label class="file-upload-label">
+                                    <span>Click to upload or drag image</span>
+                                    <input type="file" id="book-image" accept="image/*" style="display: none;">
+                                    <img id="image-preview" src="">
+                                </label>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; border:none; cursor:pointer;">
+                                <span>Confirm Appointment</span>
+                            </button>
+                            <div id="booking-status"
+                                style="margin-top: 15px; font-size: 11px; text-align: center; color: var(--gold-dark); display: none;">
+                                Processing your premium booking...
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── FULL-WIDTH MAP ── -->
+        <div class="map-full fade-up">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.0!2d-87.782!3d41.983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcf6b2f3c3d7f%3A0x0!2s6116+N+Elston+Ave%2C+Chicago%2C+IL+60646!5e0!3m2!1sen!2sus!4v1"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Jimmy's Auto Care Location">
+            </iframe>
+            <div class="map-full-overlay"></div>
+            <div class="map-pin-badge">📍 &nbsp;6116 N. Elston Ave., Chicago, IL 60646</div>
+            <a class="map-directions-btn" href="https://maps.google.com/?q=6116+N+Elston+Ave+Chicago+IL+60646"
+                target="_blank">
+                🧭 &nbsp;Get Directions
+            </a>
+        </div>
+    </section>
+
+    <!-- ══════════ CTA BAND ══════════ -->
+    <section class="cta-band fade-up">
+        <h2>
+            Ready for a <em>service</em> you<br>can actually trust?
+        </h2>
+        <div class="cta-actions">
+            <a href="tel:3124455760" class="btn-primary"><span>Call Us Today</span></a>
+            <a href="mailto:Jimmysautocare777@gmail.com" class="btn-outline">Email Us</a>
+        </div>
+    </section>
+
+    <!-- Lead Gen Popup -->
+    <div class="lead-popup-overlay" id="lead-popup">
+        <div class="lead-popup-content">
+            <button class="close-popup" id="close-popup">&times;</button>
+            <div class="popup-header">
+                <h3>Get Your <em>Luxurious</em> PDF Report</h3>
+                <p>Enter your details below to instantly download your comprehensive vehicle health analysis and
+                    exclusive offers.</p>
+            </div>
+            <form id="lead-form">
+                <input type="hidden" id="lead-tool-used" name="tool_used">
+                <input type="hidden" id="lead-tool-data" name="tool_data">
+
+                <div class="input-wrap">
+                    <input type="text" id="lead-name" required placeholder="Full Name">
+                </div>
+                <div class="input-wrap">
+                    <input type="tel" id="lead-phone" required placeholder="Phone Number">
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="lead-address" placeholder="Address (Optional)">
+                </div>
+                <div class="input-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+                    <div class="input-wrap" style="margin-bottom: 0;">
+                        <input type="text" id="lead-make" required placeholder="Vehicle Make">
+                    </div>
+                    <div class="input-wrap" style="margin-bottom: 0;">
+                        <input type="text" id="lead-model" required placeholder="Vehicle Model">
+                    </div>
+                </div>
+                <div class="input-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+                    <div class="input-wrap" style="margin-bottom: 0;">
+                        <input type="number" id="lead-year" required placeholder="Year">
+                    </div>
+                    <div class="input-wrap" style="margin-bottom: 0;">
+                        <input type="number" id="lead-mileage" required placeholder="Mileage">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;"><span>Download Report</span></button>
+                <div class="popup-loader" id="popup-loader"
+                    style="display:none; color: var(--gold); text-align: center; margin-top:10px; font-size:12px;">
+                    Generating your premium report...</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="nav-logo">
+                    <span><em>Jimmy's</em> Auto Care</span>
+                    <span style="color:var(--gold-muted); font-size: 10px; letter-spacing: 4px;">Automotive
+                        Excellence</span>
+                </div>
+                <p>"Dedicated to precision, driven by integrity. We provide Chicago's most discerning drivers with
+                    automotive care that exceeds every expectation."</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">YT</a>
+                    <a href="#" class="social-icon">IN</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Master Services</h4>
+                <ul>
+                    <li><a href="#services">Brake Systems</a></li>
+                    <li><a href="#services">State Emissions</a></li>
+                    <li><a href="#services">Precision Electrical</a></li>
+                    <li><a href="#services">Performance Tune-Ups</a></li>
+                    <li><a href="#services">Suspension & Steering</a></li>
+                    <li><a href="#services">AC & Climate Control</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Access</h4>
+                <ul>
+                    <li><a href="#about">Our Heritage</a></li>
+                    <li><a href="#gallery">Inside the Shop</a></li>
+                    <li><a href="#health-tools">Interactive Tools</a></li>
+                    <li><a href="#contact">Private Booking</a></li>
+                    <li><a href="tel:3124455760">Direct Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>At Your Service</h4>
+                <ul>
+                    <li><span style="color:rgba(255,255,255,0.7); font-size: 13px;">Mon – Fri: 8:00 – 17:00</span></li>
+                    <li><span style="color:rgba(255,255,255,0.7); font-size: 13px;">Saturday: 8:00 – 13:00</span></li>
+                    <li><span style="color:var(--red); font-size: 13px; font-style: italic;">Sunday: Exclusive
+                            Closure</span></li>
+                    <li style="margin-top: 25px;">
+                        <address
+                            style="font-style: normal; font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6;">
+                            6116 N. Elston Ave.<br>Chicago, IL 60646
+                        </address>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 <span>Jimmy's Auto Care</span> · Chicago, IL</p>
+            <p>Crafted for Performance · All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Ultra Interactivity Suite ---
+        (function () {
+            const cursor = document.getElementById('cursor');
+            const follower = document.getElementById('cursor-follower');
+            let mouseX = 0, mouseY = 0;
+            let followerX = 0, followerY = 0;
+
+            // 1. Custom Cursor Tracking
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.transform = `translate3d(${mouseX - 6}px, ${mouseY - 6}px, 0)`;
+            });
+
+            function updateFollower() {
+                followerX += (mouseX - followerX) * 0.15;
+                followerY += (mouseY - followerY) * 0.15;
+                follower.style.transform = `translate3d(${followerX - 20}px, ${followerY - 20}px, 0)`;
+                requestAnimationFrame(updateFollower);
+            }
+            updateFollower();
+
+            // 2. Hover Interactions
+            const hoverables = document.querySelectorAll('a, button, .health-tab, .social-icon, .review-card, .tilt-card');
+            hoverables.forEach(el => {
+                el.addEventListener('mouseenter', () => follower.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => follower.classList.remove('cursor-hover'));
+            });
+
+            // 3. Magnetic Buttons
+            const magnets = document.querySelectorAll('.btn-primary, .btn-outline, .btn-booking, .nav-links a');
+            magnets.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = `translate(0, 0)`;
+                });
+            });
+
+            // 4. 3D Card Tilt
+            const tiltCards = document.querySelectorAll('.service-card, .contact-card, .hours-card');
+            tiltCards.forEach(card => {
+                card.classList.add('tilt-card');
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                });
+            });
+        })();
+
+        // --- Animated Counter Script ---
+        (function () {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            const startCount = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count) + (target === 100 ? '%' : '+');
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target + (target === 100 ? '%' : '+');
+                    }
+                };
+                updateCount();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCount(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+        })();
+
+        /* ══════════════════════════════════════
+           PREMIUM PRELOADER — Self-contained
+        ══════════════════════════════════════ */
+        (function () {
+            document.body.classList.add('loading');
+
+            const preloader = document.getElementById('preloader');
+            const pct = document.getElementById('prePercent');
+            const barFill = document.getElementById('preBarFill');
+
+            let progress = 0;
+            let animFrame = null;
+            const target = { val: 0 };
+            let current = 0;
+
+            function setProgress(val) {
+                progress = Math.min(val, 100);
+                if (pct) pct.textContent = Math.round(progress) + '%';
+                if (barFill) barFill.style.width = progress + '%';
+            }
+
+            function tick() {
+                if (current < target.val) {
+                    current = Math.min(current + 0.6, target.val);
+                    setProgress(current);
+                }
+                animFrame = requestAnimationFrame(tick);
+            }
+            animFrame = requestAnimationFrame(tick);
+
+            const milestones = [
+                { t: 200, v: 15 },
+                { t: 600, v: 38 },
+                { t: 1100, v: 62 },
+                { t: 1600, v: 80 },
+                { t: 2000, v: 92 },
+                { t: 2400, v: 100 },
+            ];
+            milestones.forEach(m => {
+                setTimeout(() => { target.val = m.v; }, m.t);
+            });
+
+            function dismiss() {
+                cancelAnimationFrame(animFrame);
+                target.val = 100;
+                current = 100;
+                setProgress(100);
+
+                setTimeout(() => {
+                    preloader.classList.add('pre-exit');
+                    document.body.classList.remove('loading');
+                    preloader.addEventListener('transitionend', () => {
+                        preloader.style.display = 'none';
+                    }, { once: true });
+                }, 400);
+            }
+
+            // Auto-dismiss at 2700ms (reliable, no window.load dependency)
+            setTimeout(dismiss, 2700);
+        })();
+
+        /* ══════════════════════════════════════
+           SITE SCRIPTS
+        ══════════════════════════════════════ */
+        // Navbar shrink on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Intersection Observer for fade-up
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        fadeEls.forEach(el => observer.observe(el));
+
+        // Smooth anchor scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        /* ══════════════════════════════════════
+           CAR HEALTH TOOLS & LEAD GEN
+        ══════════════════════════════════════ */
+        const tabs = document.querySelectorAll('.health-tab');
+        const panels = document.querySelectorAll('.tool-panel');
+        const calculateBtns = document.querySelectorAll('.calculate-btn');
+        const popup = document.getElementById('lead-popup');
+        const closePopupBtn = document.getElementById('close-popup');
+        const leadForm = document.getElementById('lead-form');
+        const popupLoader = document.getElementById('popup-loader');
+
+        let currentToolData = {};
+
+        // Range input listeners
+        const rangeInputs = {
+            'brake-thickness': ' mm',
+            'tire-tread': '/32"',
+            'battery-age': ' Years'
+        };
+        Object.keys(rangeInputs).forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', (e) => {
+                    document.getElementById(id + '-val').textContent = e.target.value;
+                });
+            }
+        });
+
+        // Tab switching
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target).classList.add('active');
+            });
+        });
+
+        // Open popup on calculate
+        calculateBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const toolName = btn.dataset.tool;
+                currentToolData = { tool: toolName };
+
+                // Gather data based on tool
+                if (toolName === 'Oil Change') {
+                    currentToolData.currentMiles = document.getElementById('oil-current-miles').value;
+                    currentToolData.lastMiles = document.getElementById('oil-last-miles').value;
+                    currentToolData.oilType = document.getElementById('oil-type').value;
+                } else if (toolName === 'Brakes') {
+                    currentToolData.thickness = document.getElementById('brake-thickness').value;
+                    currentToolData.noise = document.getElementById('brake-noise').value;
+                } else if (toolName === 'Fuel Economy') {
+                    currentToolData.miles = document.getElementById('fuel-miles').value;
+                    currentToolData.gallons = document.getElementById('fuel-gallons').value;
+                } else if (toolName === 'Tires') {
+                    currentToolData.tread = document.getElementById('tire-tread').value;
+                    currentToolData.wear = document.getElementById('tire-wear').value;
+                } else if (toolName === 'Battery') {
+                    currentToolData.age = document.getElementById('battery-age').value;
+                    currentToolData.start = document.getElementById('battery-start').value;
+                }
+
+                document.getElementById('lead-tool-used').value = toolName;
+                document.getElementById('lead-tool-data').value = JSON.stringify(currentToolData);
+
+                popup.classList.add('show');
+            });
+        });
+
+        // Close popup
+        closePopupBtn.addEventListener('click', () => {
+            popup.classList.remove('show');
+        });
+
+        // Form submit
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = leadForm.querySelector('button[type="submit"]');
+            submitBtn.style.display = 'none';
+            popupLoader.style.display = 'block';
+
+            const name = document.getElementById('lead-name').value;
+            const phone = document.getElementById('lead-phone').value;
+            const address = document.getElementById('lead-address').value;
+            const make = document.getElementById('lead-make').value;
+            const model = document.getElementById('lead-model').value;
+            const year = document.getElementById('lead-year').value;
+            const mileage = document.getElementById('lead-mileage').value;
+            const toolUsed = document.getElementById('lead-tool-used').value;
+            const toolDataStr = document.getElementById('lead-tool-data').value;
+
+            const vehicleStr = `${year} ${make} ${model}`;
+
+            // Generate PDF Report using pdfmake
+            generatePDFReport(name, vehicleStr, toolUsed, JSON.parse(toolDataStr));
+
+            // Send data to Google Sheets
+            // NOTE: Replace 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL' with the actual URL from Apps Script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxOmyhmmBReTakh97QLsFbXeiTN95_COqHtxNPNnTmetSWpCImFDJAPKAg2j2AQ6HY4/exec';
+
+            try {
+                if (scriptURL && scriptURL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
+                    await fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'text/plain' },
+                        body: JSON.stringify({
+                            Name: name,
+                            Phone: phone,
+                            Address: address,
+                            ToolUsed: toolUsed,
+                            VehicleMake: make,
+                            VehicleModel: model,
+                            VehicleYear: year,
+                            Mileage: mileage
+                        })
+                    });
+                } else {
+                    console.log('Google Sheets integration skipped: Placeholder URL not replaced.');
+                }
+            } catch (error) {
+                console.error('Error sending data to Google Sheets', error);
+            }
+
+            // Show success
+            popupLoader.innerHTML = "Success! Your report is downloading. We'll be in touch!";
+            setTimeout(() => {
+                popup.classList.remove('show');
+                submitBtn.style.display = 'block';
+                popupLoader.style.display = 'none';
+                popupLoader.innerHTML = "Generating your premium report...";
+                leadForm.reset();
+            }, 3000);
+        });
+
+        function generatePDFReport(name, vehicle, toolUsed, data) {
+            let insights = [];
+            let recommendation = "";
+            let healthScore = 100;
+
+            if (toolUsed === 'Oil Change') {
+                const driven = parseInt(data.currentMiles) - parseInt(data.lastMiles);
+                insights.push(`Miles driven since last change: ${driven || 0}`);
+                insights.push(`Oil Type: ${data.oilType ? data.oilType.replace('-', ' ') : 'Not Specified'}`);
+
+                let limit = data.oilType === 'conventional' ? 3000 : (data.oilType === 'synthetic-blend' ? 5000 : 7500);
+                if (driven >= limit) {
+                    healthScore = 30;
+                    recommendation = "CRITICAL: You are overdue for an oil change. Immediate service is recommended to prevent engine damage.";
+                } else if (driven >= limit - 500) {
+                    healthScore = 60;
+                    recommendation = "WARNING: You are approaching your oil change interval. Please schedule service soon.";
+                } else {
+                    healthScore = 95;
+                    recommendation = "GOOD: Your oil life is currently healthy.";
+                }
+            } else if (toolUsed === 'Brakes') {
+                insights.push(`Estimated Pad Thickness: ${data.thickness}mm`);
+                insights.push(`Abnormal Noise: ${data.noise}`);
+
+                if (parseInt(data.thickness) <= 3 || data.noise === 'grinding') {
+                    healthScore = 20;
+                    recommendation = "CRITICAL: Your brakes are unsafe. Grinding or low pad thickness means immediate replacement is required.";
+                } else if (parseInt(data.thickness) <= 5 || data.noise === 'squeaking') {
+                    healthScore = 50;
+                    recommendation = "WARNING: Brake pads are wearing down and squeaking indicates they need inspection soon.";
+                } else {
+                    healthScore = 90;
+                    recommendation = "GOOD: Brake thickness appears adequate.";
+                }
+            } else if (toolUsed === 'Fuel Economy') {
+                const mpg = data.gallons ? (data.miles / data.gallons).toFixed(1) : 0;
+                insights.push(`Calculated MPG: ${mpg} miles per gallon`);
+                if (mpg < 15) {
+                    healthScore = 40;
+                    recommendation = "POOR EFFICIENCY: Your MPG is quite low. A tune-up, new air filter, or tire pressure check is recommended.";
+                } else if (mpg < 25) {
+                    healthScore = 70;
+                    recommendation = "AVERAGE EFFICIENCY: Regular maintenance can help improve this slightly.";
+                } else {
+                    healthScore = 95;
+                    recommendation = "EXCELLENT EFFICIENCY: Your vehicle is operating very efficiently!";
+                }
+            } else if (toolUsed === 'Tires') {
+                insights.push(`Tread Depth: ${data.tread}/32"`);
+                insights.push(`Wear Pattern: ${data.wear}`);
+
+                if (parseInt(data.tread) <= 3 || data.wear !== 'even') {
+                    healthScore = 30;
+                    recommendation = "ACTION REQUIRED: Low tread or uneven wear indicates you need new tires or an alignment immediately.";
+                } else if (parseInt(data.tread) <= 5) {
+                    healthScore = 60;
+                    recommendation = "WARNING: Tires are nearing the end of their life. Plan for replacement before winter/rain.";
+                } else {
+                    healthScore = 95;
+                    recommendation = "GOOD: Tread depth is safe and even.";
+                }
+            } else if (toolUsed === 'Battery') {
+                insights.push(`Battery Age: ${data.age} Years`);
+                insights.push(`Starting Behavior: ${data.start}`);
+
+                if (parseFloat(data.age) >= 4 || data.start === 'click') {
+                    healthScore = 25;
+                    recommendation = "CRITICAL: Batteries older than 4 years or clicking indicate imminent failure. Replace immediately.";
+                } else if (parseFloat(data.age) >= 3 || data.start === 'slow') {
+                    healthScore = 55;
+                    recommendation = "WARNING: Battery is showing signs of aging. Have it load-tested soon.";
+                } else {
+                    healthScore = 90;
+                    recommendation = "GOOD: Battery appears to be in healthy condition.";
+                }
+            }
+
+            const docDefinition = {
+                content: [
+                    {
+                        text: "Jimmy's Auto Care",
+                        style: 'header',
+                        color: '#C9A84C',
+                        alignment: 'center'
+                    },
+                    {
+                        text: '6116 N. Elston Ave., Chicago, IL 60646 | (312) 445-5760',
+                        style: 'subheader',
+                        alignment: 'center',
+                        margin: [0, 0, 0, 30]
+                    },
+                    {
+                        text: `Vehicle Health Report: ${toolUsed}`,
+                        style: 'title',
+                        margin: [0, 0, 0, 20]
+                    },
+                    {
+                        text: `Prepared for: ${name || 'Valued Customer'}`,
+                        margin: [0, 0, 0, 5]
+                    },
+                    {
+                        text: `Vehicle: ${vehicle || 'Not Specified'}`,
+                        margin: [0, 0, 0, 20]
+                    },
+                    {
+                        text: 'Health Insights',
+                        style: 'sectionHeader'
+                    },
+                    {
+                        ul: insights,
+                        margin: [0, 0, 0, 20]
+                    },
+                    {
+                        text: `Estimated System Health Score: ${healthScore}/100`,
+                        style: 'score',
+                        color: healthScore < 50 ? '#C0182A' : (healthScore < 80 ? '#D4B870' : '#228B22'),
+                        margin: [0, 0, 0, 20]
+                    },
+                    {
+                        text: 'Expert Recommendation',
+                        style: 'sectionHeader'
+                    },
+                    {
+                        text: recommendation,
+                        margin: [0, 0, 0, 40]
+                    },
+                    {
+                        text: 'Take Action Today',
+                        style: 'sectionHeader',
+                        color: '#C0182A'
+                    },
+                    {
+                        text: 'Show this report at your next visit for a complimentary multi-point inspection with any paid service. Call (312) 445-5760 to book your appointment now.',
+                        italics: true
+                    }
+                ],
+                styles: {
+                    header: {
+                        fontSize: 28,
+                        bold: true
+                    },
+                    subheader: {
+                        fontSize: 10,
+                        color: '#666666'
+                    },
+                    title: {
+                        fontSize: 22,
+                        bold: true,
+                        color: '#1A1A1A'
+                    },
+                    sectionHeader: {
+                        fontSize: 16,
+                        bold: true,
+                        color: '#1A1A1A',
+                        margin: [0, 15, 0, 5]
+                    },
+                    score: {
+                        fontSize: 18,
+                        bold: true
+                    }
+                },
+                defaultStyle: {
+                    font: 'Roboto'
+                }
+            };
+
+            pdfMake.createPdf(docDefinition).download(`Jimmys_Auto_Care_Report_${toolUsed.replace(' ', '_')}.pdf`);
+        }
+
+        // Premium Appointment Booking Logic
+        (function () {
+            const toggleBtn = document.getElementById('toggle-booking');
+            const container = document.getElementById('booking-container');
+            const form = document.getElementById('appointment-form');
+            const fileInput = document.getElementById('book-image');
+            const preview = document.getElementById('image-preview');
+            const status = document.getElementById('booking-status');
+
+            let uploadedImageBase64 = null;
+
+            if (!toggleBtn) return;
+
+            toggleBtn.addEventListener('click', () => {
+                container.classList.toggle('active');
+                if (container.classList.contains('active')) {
+                    toggleBtn.innerHTML = '<span>Close Booking</span> <i>&times;</i>';
+                } else {
+                    toggleBtn.innerHTML = '<span>✨ Book Luxurious Appointment</span> <i>📅</i>';
+                }
+            });
+
+            fileInput.addEventListener('change', function () {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                        uploadedImageBase64 = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                status.style.display = 'block';
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+
+                const name = document.getElementById('book-name').value;
+                const phone = document.getElementById('book-phone').value;
+                const vehicle = document.getElementById('book-vehicle').value;
+                const date = document.getElementById('book-date').value;
+                const time = document.getElementById('book-time').value;
+                const service = document.getElementById('book-service').value;
+
+                // 1. Generate PDF
+                const docDefinition = {
+                    content: [
+                        { text: "Jimmy's Auto Care", style: 'header', color: '#C9A84C', alignment: 'center' },
+                        { text: 'Appointment Confirmation', style: 'title', margin: [0, 10, 0, 20] },
+                        {
+                            columns: [
+                                { text: `Customer: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}`, width: '*' },
+                                { text: `Date: ${date}\nTime Slot: ${time.toUpperCase()}`, alignment: 'right' }
+                            ]
+                        },
+                        { text: '\nService Requested:', style: 'sectionHeader' },
+                        { text: service, margin: [0, 5, 0, 20] },
+                    ],
+                    styles: {
+                        header: { fontSize: 24, bold: true },
+                        title: { fontSize: 20, bold: true, alignment: 'center' },
+                        sectionHeader: { fontSize: 14, bold: true, color: '#C0182A' }
+                    }
+                };
+
+                if (uploadedImageBase64) {
+                    docDefinition.content.push({ text: 'Attached Visual Reference:', style: 'sectionHeader' });
+                    docDefinition.content.push({ image: uploadedImageBase64, width: 300, margin: [0, 10, 0, 0] });
+                }
+
+                // Explicitly set font to ensure compatibility
+                docDefinition.defaultStyle = { font: 'Roboto' };
+
+                try {
+                    console.log('Generating PDF...');
+                    const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+                    pdfDocGenerator.download(`Jimmys_Booking_${name.replace(/\s+/g, '_')}.pdf`);
+                    console.log('PDF download triggered');
+                } catch (pdfError) {
+                    console.error('PDF Generation Error:', pdfError);
+                    status.innerHTML = "Error generating PDF. Please try again.";
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                // 2. Save to Google Sheets
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxOmyhmmBReTakh97QLsFbXeiTN95_COqHtxNPNnTmetSWpCImFDJAPKAg2j2AQ6HY4/exec';
+                try {
+                    await fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'text/plain' },
+                        body: JSON.stringify({
+                            Name: name,
+                            Phone: phone,
+                            ToolUsed: 'APPOINTMENT',
+                            VehicleMake: vehicle,
+                            Address: `Date: ${date} | Time: ${time} | Service: ${service}`
+                        })
+                    });
+                } catch (err) { console.error(err); }
+
+                // 3. Open SMS (Delayed to allow PDF download to start)
+                status.innerHTML = "Success! PDF downloading... opening SMS in a moment.";
+
+                setTimeout(() => {
+                    const smsMsg = `Hi Jimmy's Auto Care, I'm ${name}. I've just booked a ${time} appointment on ${date} for my ${vehicle}. Service needed: ${service}. I have my confirmation PDF ready!`;
+                    window.location.href = `sms:+13124455760?body=${encodeURIComponent(smsMsg)}`;
+                }, 1500);
+
+                setTimeout(() => {
+                    form.reset();
+                    preview.style.display = 'none';
+                    container.classList.remove('active');
+                    submitBtn.disabled = false;
+                    status.style.display = 'none';
+                    toggleBtn.innerHTML = '<span>✨ Book Luxurious Appointment</span> <i>📅</i>';
+                }, 5000);
+            });
+        })();
+
+        // Hero Slideshow
+        (function () {
+            const heroImages = document.querySelectorAll('.hero-bg img');
+            if (heroImages.length < 2) return;
+
+            let currentIndex = 0;
+            setInterval(() => {
+                heroImages[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % heroImages.length;
+                heroImages[currentIndex].classList.add('active');
+            }, 5000);
+        })();
+    </script>
+    <!-- ══════════ FLOATING HUB ══════════ -->
+    <div class="comm-hub">
+        <a href="sms:+13124455760" class="comm-btn text-btn">
+            <span>💬</span>
+            <span class="comm-tooltip">Text Jimmy</span>
+        </a>
+        <a href="tel:3124455760" class="comm-btn call-btn">
+            <span>📞</span>
+            <span class="comm-tooltip">Direct Call</span>
+        </a>
+    </div>
+
+</body>
+
+</html>
